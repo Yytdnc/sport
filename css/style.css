@@ -1,0 +1,225 @@
+/* SportPick - 스포츠 부상/뉴스 정보 사이트 스타일 */
+
+:root {
+  --bg: #0f1420;
+  --surface: #171e2e;
+  --surface-2: #1f2940;
+  --text: #eef1f8;
+  --text-soft: #93a0ba;
+  --border: #2a3450;
+  --accent: #ff5b35;
+  --accent-dark: #e0451f;
+  --accent-soft: rgba(255, 91, 53, 0.14);
+  --accent-2: #2dd4bf;
+  --status-out: #ef4444;
+  --status-doubtful: #f59e0b;
+  --status-questionable: #eab308;
+  --status-ok: #22c55e;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  --max-width: 1080px;
+  --font-display: "Black Han Sans", "Pretendard", "Apple SD Gothic Neo", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", -apple-system,
+    BlinkMacSystemFont, system-ui, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+.wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Header ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(15, 20, 32, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+}
+.brand .logo-emoji { font-size: 1.4rem; }
+.brand .accent { color: var(--accent); }
+
+.topbar nav { display: flex; gap: 22px; font-weight: 700; color: var(--text-soft); font-size: 0.9rem; }
+.topbar nav a:hover, .topbar nav a.active { color: var(--accent); }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 52px 0 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 91, 53, 0.16), transparent 45%),
+    radial-gradient(circle at 85% 10%, rgba(45, 212, 191, 0.14), transparent 45%);
+}
+.hero .eyebrow {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.78rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+}
+.hero p { color: var(--text-soft); font-size: 1rem; max-width: 540px; margin: 0 auto; }
+
+/* ---------- League filter tabs ---------- */
+.league-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0 4px;
+  margin: 24px 0 4px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.league-tabs::-webkit-scrollbar { display: none; }
+.league-tab {
+  flex-shrink: 0;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  color: var(--text-soft);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 9px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.league-tab:hover { border-color: var(--accent); color: var(--text); }
+.league-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* ---------- Section ---------- */
+.section { padding: 28px 0; }
+.section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* ---------- Injury cards ---------- */
+.injury-grid { display: flex; flex-direction: column; gap: 12px; }
+.injury-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--status-out);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.injury-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: var(--border); }
+.injury-card.status-doubtful { border-left-color: var(--status-doubtful); }
+.injury-card.status-questionable { border-left-color: var(--status-questionable); }
+.injury-card.status-ok { border-left-color: var(--status-ok); }
+
+.injury-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.injury-league-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-soft);
+  letter-spacing: 0.02em;
+}
+.injury-status-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--status-out);
+}
+.injury-status-badge.doubtful { background: var(--status-doubtful); color: #1a1200; }
+.injury-status-badge.questionable { background: var(--status-questionable); color: #1a1200; }
+.injury-status-badge.ok { background: var(--status-ok); color: #04170a; }
+.injury-updated { margin-left: auto; font-size: 0.75rem; color: var(--text-soft); }
+
+.injury-card h3 { margin: 0 0 6px; font-size: 1.05rem; font-weight: 800; }
+.injury-card .team-name { color: var(--text-soft); font-weight: 600; font-size: 0.85rem; }
+.injury-card p { margin: 8px 0 0; font-size: 0.9rem; color: #c7cfe0; }
+.injury-card .source-note {
+  margin-top: 10px;
+  font-size: 0.72rem;
+  color: var(--text-soft);
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 30px 20px 40px;
+  margin-top: 40px;
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 0.8rem;
+}
+footer .foot-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 10px; font-weight: 700; }
+footer .foot-links a:hover { color: var(--accent); }
+.disclaimer {
+  font-size: 0.76rem;
+  color: var(--text-soft);
+  text-align: center;
+  margin: 8px 0;
+  line-height: 1.7;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 560px) {
+  .topbar { padding: 12px 16px; }
+  .brand { font-size: 1.1rem; }
+  .topbar nav { gap: 12px; font-size: 0.8rem; }
+  .hero { padding: 36px 0 20px; }
+  .injury-card { padding: 14px 16px; }
+}
