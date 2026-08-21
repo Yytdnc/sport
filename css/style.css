@@ -203,6 +203,56 @@ button { font: inherit; }
   animation: pulse 1.4s ease-in-out infinite;
 }
 
+/* ---------- Score list (TheSportsDB) ---------- */
+.score-list { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-technical);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  flex-wrap: wrap;
+}
+.score-league-badge {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text-soft);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.score-teams { flex: 1 1 auto; min-width: 160px; font-weight: 600; font-size: 0.92rem; color: var(--text); }
+.score-teams .vs { color: var(--text-soft); font-weight: 400; margin: 0 4px; font-size: 0.8rem; }
+.score-value {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--accent);
+  min-width: 56px;
+  text-align: center;
+}
+.score-status {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--surface-2);
+  color: var(--text-soft);
+}
+.score-status.live { background: var(--status-out); color: #1a0402; }
+.score-status.done { background: var(--surface-2); color: var(--text-soft); }
+.score-status.upcoming { background: var(--accent-soft); color: var(--accent); }
+.score-date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-soft); flex-shrink: 0; }
+
 /* ---------- Injury cards ---------- */
 .injury-grid { display: flex; flex-direction: column; gap: 10px; }
 .injury-card {

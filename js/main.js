@@ -8,7 +8,7 @@
   };
 
   const grid = document.getElementById("injury-grid");
-  const tabs = document.querySelectorAll(".league-tab");
+  const tabs = document.querySelectorAll(".injury-tabs .league-tab");
   const updatedEl = document.getElementById("last-updated");
 
   function cardHTML(item) {
