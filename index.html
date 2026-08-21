@@ -12,9 +12,10 @@
   <meta property="og:title" content="SportPick - 부상자 정보 & 경기 분석" />
   <meta property="og:description" content="MLB, EPL, 라리가, 리그앙, 분데스리가 선수 부상 소식을 공식 발표와 현지 보도를 바탕으로 정리해드려요." />
   <meta property="og:locale" content="ko_KR" />
-  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=1" />
+  <link rel="stylesheet" href="css/style.css?v=2" />
 </head>
 <body>
   <header class="topbar">
@@ -27,7 +28,7 @@
 
   <main>
     <section class="hero wrap">
-      <span class="eyebrow">공식 발표 + 현지 보도 기반 정리</span>
+      <span class="eyebrow"><span class="pulse-dot"></span>매시 자동 업데이트 감시 중</span>
       <h1>오늘의 부상자 소식</h1>
       <p>MLB, EPL, 라리가, 리그앙, 분데스리가 — 구단 공식 발표와 현지 언론 보도를 확인해서 정리해드려요. 실시간 베팅 정보가 아닌, 참고용 요약 정보예요.</p>
     </section>
@@ -43,8 +44,8 @@
       </div>
 
       <div class="section-head" style="margin-top:18px;">
-        <h2>🩹 최신 부상자 소식</h2>
-        <span style="font-size:0.8rem; color:var(--text-soft);">최근 업데이트: <span id="last-updated"></span></span>
+        <h2><span class="material-symbols-outlined">emergency</span> 최신 부상자 소식</h2>
+        <span class="live-indicator"><span class="pulse-dot"></span>최근 업데이트: <span id="last-updated"></span></span>
       </div>
       <div class="injury-grid" id="injury-grid"></div>
     </section>
@@ -60,7 +61,7 @@
     <p>© 2026 SportPick. 본 사이트의 정보는 참고용이며 베팅을 권장하지 않습니다.</p>
   </footer>
 
-  <script src="js/injury-data.js?v=1"></script>
-  <script src="js/main.js?v=1"></script>
+  <script src="js/injury-data.js?v=2"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>

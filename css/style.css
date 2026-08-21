@@ -1,26 +1,35 @@
-/* SportPick - 스포츠 부상/뉴스 정보 사이트 스타일 */
+/* SportPick - Arena Live Pulse 디자인 시스템 */
 
 :root {
-  --bg: #0f1420;
-  --surface: #171e2e;
-  --surface-2: #1f2940;
-  --text: #eef1f8;
-  --text-soft: #93a0ba;
-  --border: #2a3450;
-  --accent: #ff5b35;
-  --accent-dark: #e0451f;
-  --accent-soft: rgba(255, 91, 53, 0.14);
-  --accent-2: #2dd4bf;
-  --status-out: #ef4444;
-  --status-doubtful: #f59e0b;
+  --bg: #111317;
+  --surface: #1a1c20;
+  --surface-2: #1e2024;
+  --surface-elevated: #1c1f26;
+  --surface-lowest: #0c0e12;
+  --text: #e2e2e8;
+  --text-soft: #9a9ea6;
+  --border: #2c2f35;
+  --border-technical: #3a3d34;
+
+  --accent: #c3f400;
+  --accent-dim: #abd600;
+  --on-accent: #283500;
+  --accent-soft: rgba(195, 244, 0, 0.12);
+  --live-pulse: #ccff00;
+
+  --status-out: #ff3b30;
+  --status-doubtful: #f5a623;
   --status-questionable: #eab308;
-  --status-ok: #22c55e;
-  --radius-lg: 20px;
-  --radius-md: 14px;
-  --radius-sm: 10px;
-  --shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  --status-ok: #34d399;
+
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
   --max-width: 1080px;
-  --font-display: "Black Han Sans", "Pretendard", "Apple SD Gothic Neo", sans-serif;
+
+  --font-display: "Archivo Narrow", "Pretendard", "Apple SD Gothic Neo", sans-serif;
+  --font-mono: "JetBrains Mono", "Pretendard", monospace;
 }
 
 * { box-sizing: border-box; }
@@ -29,7 +38,7 @@ html, body { margin: 0; padding: 0; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", -apple-system,
+  font-family: "Pretendard", "Inter", "Apple SD Gothic Neo", "Malgun Gothic", -apple-system,
     BlinkMacSystemFont, system-ui, sans-serif;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
@@ -41,6 +50,13 @@ button { font: inherit; }
 
 .wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
 
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  vertical-align: middle;
+  line-height: 1;
+}
+.material-symbols-outlined.fill { font-variation-settings: "FILL" 1; }
+
 /* ---------- Header ---------- */
 .topbar {
   position: sticky;
@@ -51,7 +67,7 @@ button { font: inherit; }
   justify-content: space-between;
   gap: 16px;
   padding: 16px 20px;
-  background: rgba(15, 20, 32, 0.92);
+  background: rgba(17, 19, 23, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
   max-width: var(--max-width);
@@ -62,13 +78,24 @@ button { font: inherit; }
   align-items: center;
   gap: 8px;
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-weight: 700;
+  font-size: 1.35rem;
   letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 .brand .logo-emoji { font-size: 1.4rem; }
 .brand .accent { color: var(--accent); }
 
-.topbar nav { display: flex; gap: 22px; font-weight: 700; color: var(--text-soft); font-size: 0.9rem; }
+.topbar nav {
+  display: flex;
+  gap: 20px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
 .topbar nav a:hover, .topbar nav a.active { color: var(--accent); }
 
 /* ---------- Hero ---------- */
@@ -78,28 +105,42 @@ button { font: inherit; }
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 15% 20%, rgba(255, 91, 53, 0.16), transparent 45%),
-    radial-gradient(circle at 85% 10%, rgba(45, 212, 191, 0.14), transparent 45%);
+    radial-gradient(circle at 15% 20%, rgba(195, 244, 0, 0.1), transparent 45%),
+    radial-gradient(circle at 85% 10%, rgba(255, 59, 48, 0.08), transparent 45%);
 }
 .hero .eyebrow {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-  color: #fff;
-  font-weight: 800;
-  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.72rem;
   padding: 6px 14px;
   border-radius: 999px;
   margin-bottom: 16px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
+.hero .eyebrow .pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--on-accent);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 400;
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  font-weight: 700;
   letter-spacing: -0.01em;
   margin: 0 0 12px;
+  text-transform: uppercase;
 }
-.hero p { color: var(--text-soft); font-size: 1rem; max-width: 540px; margin: 0 auto; }
+.hero p { color: var(--text-soft); font-size: 0.98rem; max-width: 540px; margin: 0 auto; }
 
 /* ---------- League filter tabs ---------- */
 .league-tabs {
@@ -114,42 +155,65 @@ button { font: inherit; }
 .league-tabs::-webkit-scrollbar { display: none; }
 .league-tab {
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: var(--surface);
-  border: 1.5px solid var(--border);
+  border: 1px solid var(--border);
   color: var(--text-soft);
-  font-weight: 700;
-  font-size: 0.85rem;
-  padding: 9px 18px;
-  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 9px 16px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 0.15s ease;
   white-space: nowrap;
 }
 .league-tab:hover { border-color: var(--accent); color: var(--text); }
-.league-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.league-tab.active { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 
 /* ---------- Section ---------- */
 .section { padding: 28px 0; }
 .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
 .section-head h2 {
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-size: 1.3rem;
+  font-weight: 700;
   letter-spacing: -0.01em;
+  text-transform: uppercase;
   margin: 0;
+}
+.section-head .live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-soft);
+  letter-spacing: 0.04em;
+}
+.section-head .live-indicator .pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--live-pulse);
+  animation: pulse 1.4s ease-in-out infinite;
 }
 
 /* ---------- Injury cards ---------- */
-.injury-grid { display: flex; flex-direction: column; gap: 12px; }
+.injury-grid { display: flex; flex-direction: column; gap: 10px; }
 .injury-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--status-out);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-technical);
+  border-left: 3px solid var(--status-out);
   border-radius: var(--radius-md);
   padding: 18px 20px;
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
-.injury-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: var(--border); }
+.injury-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: var(--border-technical); }
 .injury-card.status-doubtful { border-left-color: var(--status-doubtful); }
 .injury-card.status-questionable { border-left-color: var(--status-questionable); }
 .injury-card.status-ok { border-left-color: var(--status-ok); }
@@ -162,33 +226,38 @@ button { font: inherit; }
   margin-bottom: 8px;
 }
 .injury-league-badge {
-  font-size: 0.68rem;
-  font-weight: 800;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
   padding: 3px 9px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   background: var(--surface-2);
   color: var(--text-soft);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 .injury-status-badge {
-  font-size: 0.7rem;
-  font-weight: 800;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
   padding: 3px 10px;
-  border-radius: 999px;
-  color: #fff;
+  border-radius: var(--radius-sm);
+  color: #1a0402;
   background: var(--status-out);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 .injury-status-badge.doubtful { background: var(--status-doubtful); color: #1a1200; }
 .injury-status-badge.questionable { background: var(--status-questionable); color: #1a1200; }
 .injury-status-badge.ok { background: var(--status-ok); color: #04170a; }
-.injury-updated { margin-left: auto; font-size: 0.75rem; color: var(--text-soft); }
+.injury-updated { margin-left: auto; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-soft); }
 
-.injury-card h3 { margin: 0 0 6px; font-size: 1.05rem; font-weight: 800; }
+.injury-card h3 { margin: 0 0 6px; font-size: 1.05rem; font-weight: 800; color: var(--text); }
 .injury-card .team-name { color: var(--text-soft); font-weight: 600; font-size: 0.85rem; }
-.injury-card p { margin: 8px 0 0; font-size: 0.9rem; color: #c7cfe0; }
+.injury-card p { margin: 8px 0 0; font-size: 0.9rem; color: #c4c8d1; }
 .injury-card .source-note {
   margin-top: 10px;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--text-soft);
   border-top: 1px solid var(--border);
   padding-top: 8px;
@@ -203,7 +272,17 @@ footer {
   color: var(--text-soft);
   font-size: 0.8rem;
 }
-footer .foot-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 10px; font-weight: 700; }
+footer .foot-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
 footer .foot-links a:hover { color: var(--accent); }
 .disclaimer {
   font-size: 0.76rem;
@@ -218,8 +297,8 @@ footer .foot-links a:hover { color: var(--accent); }
 
 @media (max-width: 560px) {
   .topbar { padding: 12px 16px; }
-  .brand { font-size: 1.1rem; }
-  .topbar nav { gap: 12px; font-size: 0.8rem; }
+  .brand { font-size: 1.15rem; }
+  .topbar nav { gap: 12px; font-size: 0.72rem; }
   .hero { padding: 36px 0 20px; }
   .injury-card { padding: 14px 16px; }
 }
