@@ -558,6 +558,62 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "다저스 마무리 에드윈 디아즈가 목 염증으로 15일 부상자 명단에 올랐어요. 팔꿈치 수술 후 복귀한 최근 등판들에서 자책점을 여러 차례 내주며 세이브 기회를 놓치는 등 부진이 이어지던 가운데 나온 조치예요.",
   },
+  {
+    id: "mlb-arrighetti-return",
+    photoQuery: "Spencer Arrighetti",
+    teamEn: "Toronto Blue Jays",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "토론토 블루제이스",
+    player: "스펜서 애리게티",
+    status: "ok",
+    updated: "2026-08-22",
+    headline: "애리게티, 발 부상 딛고 부상자 명단에서 복귀",
+    summary:
+      "지난달 말부터 발 부상으로 이탈했던 스펜서 애리게티가 8월 21일 15일 부상자 명단에서 활성화됐어요. 트레이드로 블루제이스 유니폼을 입은 뒤 복귀 첫 경기에서는 선발이 아닌 벌크 불펜 역할을 맡을 예정이에요.",
+  },
+  {
+    id: "epl-chelsea-fofana-james-lavia-nkunku",
+    photoQuery: "Wesley Fofana",
+    teamEn: "Chelsea",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "첼시",
+    player: "포파나 · 제임스 · 라비아 · 은쿤쿠",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "첼시, 개막전 앞두고 포파나·제임스·라비아·은쿤쿠 재활 중",
+    summary:
+      "첼시가 프리미어리그 개막전인 에버턴전을 앞두고 웨슬리 포파나, 리스 제임스, 로메오 라비아, 크리스토프 은쿤쿠까지 재활 중인 선수들 없이 나서요. 벤 칠웰도 부분 훈련에만 합류한 상태라 이번 경기 출전 여부가 불투명해요.",
+  },
+  {
+    id: "epl-everton-garner-norgaard",
+    photoQuery: "James Garner",
+    teamEn: "Everton",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "에버턴",
+    player: "가너 · 노르고르",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "에버턴, 가너·노르고르 부상으로 개막전 결장",
+    summary:
+      "에버턴의 제임스 가너가 지난 7월 서혜부 수술을 받은 뒤 아직 회복하지 못해 개막전에 나서지 못해요. 크리스티안 노르고르도 경미하지만 출전이 어려운 부상을 안고 있어 함께 결장해요.",
+  },
+  {
+    id: "epl-forest-yates-savona",
+    photoQuery: "Ryan Yates",
+    teamEn: "Nottingham Forest",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "노팅엄 포레스트",
+    player: "예이츠 · 사보나",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "노팅엄 포레스트, 주장 예이츠·사보나 개막전 결장",
+    summary:
+      "노팅엄 포레스트 주장 라이언 예이츠가 프리시즌 마지막 친선경기부터 결장했고 개막전 복귀도 시간 내에 이루어지지 못했어요. 니콜로 사보나도 함께 결장하며 수비진 운용에 부담이 생겼어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
