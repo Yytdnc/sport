@@ -25,20 +25,28 @@ alter table community_posts enable row level security;
 alter table community_comments enable row level security;
 
 -- 게시글: 누구나 조회, 로그인한 본인만 작성/수정/삭제
+-- (drop if exists 로 이 스크립트를 여러 번 실행해도 안전하게)
+drop policy if exists "community_posts_select" on community_posts;
 create policy "community_posts_select" on community_posts
   for select using (true);
+drop policy if exists "community_posts_insert" on community_posts;
 create policy "community_posts_insert" on community_posts
   for insert with check (auth.uid() = author_id);
+drop policy if exists "community_posts_update_own" on community_posts;
 create policy "community_posts_update_own" on community_posts
   for update using (auth.uid() = author_id);
+drop policy if exists "community_posts_delete_own" on community_posts;
 create policy "community_posts_delete_own" on community_posts
   for delete using (auth.uid() = author_id);
 
 -- 댓글: 누구나 조회, 로그인한 본인만 작성/삭제
+drop policy if exists "community_comments_select" on community_comments;
 create policy "community_comments_select" on community_comments
   for select using (true);
+drop policy if exists "community_comments_insert" on community_comments;
 create policy "community_comments_insert" on community_comments
   for insert with check (auth.uid() = author_id);
+drop policy if exists "community_comments_delete_own" on community_comments;
 create policy "community_comments_delete_own" on community_comments
   for delete using (auth.uid() = author_id);
 
