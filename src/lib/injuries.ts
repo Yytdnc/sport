@@ -824,6 +824,34 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "어깨 부상으로 이탈했던 살 프렐릭이 트리플A 내슈빌에서 재활 경기를 이어가며 좋은 타격감을 보이고 있어요. 8월 22일 기준 아직 1군에 합류하지 못했지만, 팻 머피 감독은 '조만간 볼 수 있을 것'이라며 복귀가 머지않았음을 시사했어요.",
   },
+  {
+    id: "mlb-bluejays-smith-hamstring",
+    photoQuery: "Josh Smith",
+    teamEn: "Toronto Blue Jays",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "토론토 블루제이스",
+    player: "조시 스미스",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "스미스, 왼쪽 햄스트링 염증으로 10일 부상자 명단",
+    summary:
+      "조시 스미스가 8월 20일 레이스전 도중 왼쪽 햄스트링에 통증을 느꼈고, 블루제이스는 그를 해당 날짜로 소급 적용된 10일 부상자 명단에 올렸어요. 정확한 손상 정도를 확인하기 위한 MRI 검사가 예정돼 있으며, 빈 자리는 데이비스 슈나이더가 콜업돼 채웠어요.",
+  },
+  {
+    id: "mlb-dodgers-pages-hand-fracture",
+    photoQuery: "Andy Pages",
+    teamEn: "Los Angeles Dodgers",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "로스앤젤레스 다저스",
+    player: "앤디 페이지스",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "페이지스, 손등 골절… 4~5주 결장 전망",
+    summary:
+      "다저스 외야수 앤디 페이지스가 8월 21일 피츠버그전에서 시속 100마일 강속구에 왼손을 맞아 골절 판정을 받았어요. 데이브 로버츠 감독은 대략 4~5주 결장을 예상한다고 밝혔고, 수술 가능성도 열어뒀지만 복귀 시점에는 큰 영향이 없을 것으로 봤어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
