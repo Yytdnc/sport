@@ -1,6 +1,7 @@
 import { unstable_cache } from "next/cache";
 import type { League, Match, MatchStatus, ScoresResponse } from "@/lib/types";
 import { POPULAR_SOCCER_LEAGUE_NAMES } from "@/lib/scores/leagues";
+import { toKoreanTeamName } from "@/lib/scores/team-names-ko";
 
 const API_HOST = "https://v3.football.api-sports.io";
 
@@ -74,8 +75,8 @@ function toMatch(fx: ApiFootballFixture): Match {
     id: `af-${fx.fixture.id}`,
     sportId: "soccer",
     league,
-    home: { id: `af-team-${fx.teams.home.id}`, name: fx.teams.home.name, logo: fx.teams.home.logo },
-    away: { id: `af-team-${fx.teams.away.id}`, name: fx.teams.away.name, logo: fx.teams.away.logo },
+    home: { id: `af-team-${fx.teams.home.id}`, name: toKoreanTeamName(fx.teams.home.name), logo: fx.teams.home.logo },
+    away: { id: `af-team-${fx.teams.away.id}`, name: toKoreanTeamName(fx.teams.away.name), logo: fx.teams.away.logo },
     homeScore: fx.goals.home,
     awayScore: fx.goals.away,
     status,

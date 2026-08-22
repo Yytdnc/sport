@@ -1,6 +1,7 @@
 import { unstable_cache } from "next/cache";
 import type { League, Match, MatchStatus, SportId } from "@/lib/types";
 import { THESPORTSDB_LEAGUES, type TheSportsDbLeague } from "@/lib/scores/leagues";
+import { toKoreanTeamName } from "@/lib/scores/team-names-ko";
 
 const API_BASE = "https://www.thesportsdb.com/api/v1/json/3";
 
@@ -70,8 +71,8 @@ function toMatch(ev: TsdbEvent, league: TheSportsDbLeague): Match {
     id: `tsdb-${ev.idEvent}`,
     sportId: league.sportId,
     league: leagueRef,
-    home: { id: `${league.id}-home-${ev.strHomeTeam}`, name: ev.strHomeTeam },
-    away: { id: `${league.id}-away-${ev.strAwayTeam}`, name: ev.strAwayTeam },
+    home: { id: `${league.id}-home-${ev.strHomeTeam}`, name: toKoreanTeamName(ev.strHomeTeam) },
+    away: { id: `${league.id}-away-${ev.strAwayTeam}`, name: toKoreanTeamName(ev.strAwayTeam) },
     homeScore: ev.intHomeScore != null ? Number(ev.intHomeScore) : null,
     awayScore: ev.intAwayScore != null ? Number(ev.intAwayScore) : null,
     status,

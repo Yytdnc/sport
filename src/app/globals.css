@@ -409,6 +409,83 @@ input, textarea { font: inherit; }
   border-top: 1px solid var(--border);
   padding-top: 8px;
 }
+.source-note {
+  font-size: 0.76rem;
+  color: var(--text-soft);
+  text-align: center;
+}
+
+/* ---------- Team injury overview + cards ---------- */
+.injury-overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.injury-overview-tile {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-technical);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.injury-overview-tile .label { font-size: 0.72rem; color: var(--text-soft); }
+.injury-overview-tile .value { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--text); }
+
+.team-injury-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media (max-width: 720px) {
+  .injury-overview { grid-template-columns: 1fr; }
+  .team-injury-grid { grid-template-columns: 1fr; }
+}
+.team-injury-card {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-technical);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+}
+.team-injury-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.team-injury-name { font-weight: 800; font-size: 1rem; margin-right: 8px; }
+.team-injury-count {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--live-color);
+}
+.team-injury-dots { display: flex; gap: 10px; margin-top: 10px; }
+.dot-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+.dot-badge .dot { width: 8px; height: 8px; border-radius: 50%; }
+.dot-badge.out .dot { background: var(--status-out); }
+.dot-badge.caution .dot { background: var(--status-doubtful); }
+.dot-badge.ok .dot { background: var(--status-ok); }
+.team-injury-key {
+  margin-top: 10px;
+  font-size: 0.86rem;
+  color: #c4c8d1;
+}
+.team-injury-key strong { color: var(--text); }
+.team-injury-toggle { margin-top: 12px; width: 100%; }
+.team-injury-detail-list {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
 
 /* ---------- Footer ---------- */
 footer {
