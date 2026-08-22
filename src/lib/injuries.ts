@@ -530,6 +530,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "리버풀이 8월 23일 뉴캐슬 원정 개막전에 우고 에키티케, 코너 브래들리, 조반니 레오니, 조 고메즈 없이 나서요. 커티스 존스와 프레디 우드먼도 컨디션에 따라 출전이 불투명한 상태예요.",
   },
+  {
+    id: "mlb-stanton-calf",
+    photoQuery: "Giancarlo Stanton",
+    teamEn: "New York Yankees",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "뉴욕 양키스",
+    player: "지안카를로 스탠턴",
+    status: "doubtful",
+    updated: "2026-08-22",
+    headline: "스탠턴, 6월 재발 이후 처음으로 주루 훈련 소화… 재활 순항",
+    summary:
+      "오른쪽 종아리 부상으로 이탈한 지안카를로 스탠턴이 6월 재발 이후 처음으로 양키 스타디움에서 주루 훈련을 소화했어요. 에런 분 감독은 종아리 상태가 계속 좋으면 마이너리그 재활 경기 배정이 다음 단계가 될 수 있다고 밝혔어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
