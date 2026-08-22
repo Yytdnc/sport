@@ -782,6 +782,48 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "팔꿈치 토미존 수술에서 회복 중인 조 머스그로브가 곧 불펜 피칭을 소화할 예정이며, 8월 24일이 속한 주에 네 번째 재활 등판을 치를 것으로 보여요. 이후 결과에 따라 1군 콜업 여부가 결정될 전망이에요.",
   },
+  {
+    id: "mlb-woo-shoulder",
+    photoQuery: "Bryan Woo",
+    teamEn: "Seattle Mariners",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "시애틀 매리너스",
+    player: "브라이언 우",
+    status: "questionable",
+    updated: "2026-08-22",
+    headline: "우, 어깨 통증으로 등판 연기… IL행은 피할 듯",
+    summary:
+      "시애틀 선발 브라이언 우가 지난 등판 도중 어깨 통증을 느껴 8월 22일 예정됐던 다음 선발 등판이 최소 이틀 미뤄졌어요. 구단은 별도 영상 검사 없이 경과를 지켜보고 있고, 댄 윌슨 감독은 부상자 명단행까지는 가지 않을 것으로 낙관하고 있어요.",
+  },
+  {
+    id: "mlb-gimenez-hamstring",
+    photoQuery: "Andres Gimenez",
+    teamEn: "Toronto Blue Jays",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "토론토 블루제이스",
+    player: "안드레스 히메네스",
+    status: "questionable",
+    updated: "2026-08-22",
+    headline: "히메네스, 오른쪽 햄스트링 뭉침으로 결장… MRI는 안 받아",
+    summary:
+      "안드레스 히메네스가 레이스전 1루 주루 도중 오른쪽 햄스트링에 통증을 느껴 교체됐어요. 다음 날 검사에서 근력과 가동 범위 모두 양호해 MRI 없이 데이 투 데이로 분류됐지만, 금요일 라인업에서는 빠졌어요.",
+  },
+  {
+    id: "mlb-frelick-shoulder-return",
+    photoQuery: "Sal Frelick",
+    teamEn: "Milwaukee Brewers",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "밀워키 브루어스",
+    player: "살 프렐릭",
+    status: "doubtful",
+    updated: "2026-08-22",
+    headline: "프렐릭, 트리플A 재활 순항… 메이저 복귀 임박",
+    summary:
+      "어깨 부상으로 이탈했던 살 프렐릭이 트리플A 내슈빌에서 재활 경기를 이어가며 좋은 타격감을 보이고 있어요. 8월 22일 기준 아직 1군에 합류하지 못했지만, 팻 머피 감독은 '조만간 볼 수 있을 것'이라며 복귀가 머지않았음을 시사했어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
