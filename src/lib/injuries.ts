@@ -629,6 +629,20 @@ export const INJURIES: InjuryItem[] = [
       "지난 5월 리버풀전에서 광고판과 충돌해 정강이를 다친 베냐민 셰슈코가 프리시즌 내내 결장한 끝에 이번 주 훈련을 재개했어요. 구단은 무리하게 복귀를 서두르지 않겠다는 입장이지만, 프리미어리그 개막전인 헐 시티 원정 명단에는 이름을 올릴 것으로 보여요.",
   },
   {
+    id: "mlb-bluejays-guerrero-concussion",
+    photoQuery: "Vladimir Guerrero Jr.",
+    teamEn: "Toronto Blue Jays",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "토론토 블루제이스",
+    player: "블라디미르 게레로 주니어",
+    status: "questionable",
+    updated: "2026-08-22",
+    headline: "게레로 주니어, 뇌진탕 최종 검사 통과… 토요일 양키스전 복귀 전망",
+    summary:
+      "블루제이스 간판타자 게레로 주니어가 8월 16일 양키스전에서 상대 선수와 충돌해 머리를 다친 뒤 7일 뇌진탕 부상자 명단에 올랐어요. 싱글A 더니든에서 재활 경기를 소화하고 최종 뇌진탕 검사까지 통과하면서, 8월 24일 토요일 뉴욕 원정 양키스전 복귀가 유력해졌어요.",
+  },
+  {
     id: "epl-forest-yates-savona",
     photoQuery: "Ryan Yates",
     teamEn: "Nottingham Forest",
