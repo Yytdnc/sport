@@ -377,6 +377,20 @@ export const INJURIES: InjuryItem[] = [
       "니스로 이적한 로랑 아베르갈이 프리시즌 친선경기 도중 오른쪽 무릎을 다쳤고, 정밀 검진 결과 전방십자인대 파열로 확인돼 수술을 받았어요. 구단은 그의 복귀 시점을 2027년 봄으로 예상하고 있어요.",
   },
   {
+    id: "laliga-realmadrid-asencio-thigh",
+    photoQuery: "Raul Asencio",
+    teamEn: "Real Madrid",
+    league: "laliga",
+    leagueLabel: "라리가",
+    team: "레알 마드리드",
+    player: "라울 아센시오",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "아센시오, 오른쪽 허벅지 근육 부상… 9월 중순 복귀 전망",
+    summary:
+      "레알 마드리드 라울 아센시오가 레가네스와의 프리시즌 친선경기에서 전반전을 소화한 뒤 오른쪽 허벅지(대퇴직근) 근육 통증을 느껴 교체됐어요. 정밀 검진 결과 근육 손상이 확인되면서 라리가 개막전인 에스파뇰전에도 결장하게 됐고, 복귀는 9월 중순쯤으로 예상돼요.",
+  },
+  {
     id: "epl-newcastle-joelinton-livramento",
     photoQuery: "Joelinton",
     teamEn: "Newcastle United",
