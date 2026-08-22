@@ -404,6 +404,34 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "뉴캐슬이 프리미어리그 개막전인 리버풀전을 앞두고 조엘린턴과 티노 리브라멘토 없이 나서게 됐어요. 조엘린턴은 부상으로 최소 2주가량 결장이 예상돼요.",
   },
+  {
+    id: "bundesliga-dortmund-can-schlotterbeck",
+    photoQuery: "Emre Can",
+    teamEn: "Borussia Dortmund",
+    league: "bundesliga",
+    leagueLabel: "분데스리가",
+    team: "보루시아 도르트문트",
+    player: "에메레 칸 · 니코 슐로터베크",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "도르트문트, 칸·슐로터베크 동반 결장… 복귀는 각각 12월과 9월 목표",
+    summary:
+      "에메레 칸이 지난 3월 바이에른전에서 당한 무릎 십자인대 파열로 재활 중이며, 팀은 12월은 되어야 그의 복귀가 가능할 것으로 보고 있어요. 니코 슐로터베크도 월드컵에서 다친 발목 내측인대 부상으로 프리시즌 내내 결장했고, 8월 22일 바이에른과의 슈퍼컵에도 나서지 못한 채 9월 중순 복귀를 목표로 재활하고 있어요.",
+  },
+  {
+    id: "mlb-arenado-intercostal",
+    photoQuery: "Nolan Arenado",
+    teamEn: "Arizona Diamondbacks",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "애리조나 다이아몬드백스",
+    player: "놀란 아레나도",
+    status: "questionable",
+    updated: "2026-08-22",
+    headline: "아레나도, 늑간근 경미한 이상 소견… 지명타자로 라인업 복귀",
+    summary:
+      "왼쪽 옆구리 통증을 호소했던 아레나도가 보스턴에서 받은 MRI 검사에서 늑간근 부위에 경미한 신호만 발견돼 부상자 명단행은 피했어요. 곧바로 레드삭스전 지명타자로 라인업에 복귀했지만, 본인은 전력 송구는 아직 만족스럽지 않다고 밝혀 완전한 수비 복귀까지는 시간이 더 필요해 보여요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
