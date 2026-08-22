@@ -432,6 +432,62 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "왼쪽 옆구리 통증을 호소했던 아레나도가 보스턴에서 받은 MRI 검사에서 늑간근 부위에 경미한 신호만 발견돼 부상자 명단행은 피했어요. 곧바로 레드삭스전 지명타자로 라인업에 복귀했지만, 본인은 전력 송구는 아직 만족스럽지 않다고 밝혀 완전한 수비 복귀까지는 시간이 더 필요해 보여요.",
   },
+  {
+    id: "mlb-kurtz-thumb",
+    photoQuery: "Nick Kurtz",
+    teamEn: "Athletics",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "오클랜드 애슬레틱스",
+    player: "닉 커츠",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "커츠, 오른손 엄지 부상으로 사실상 시즌 아웃",
+    summary:
+      "신인 커츠가 오른손 엄지 손바닥판 부상으로 8월 4일 혈소판 풍부 혈장(PRP) 주사를 맞고 4주간 보호대를 착용해야 했어요. 9월 초 보호대를 벗을 예정이지만 순위 경쟁에서 멀어진 애슬레틱스가 서두를 이유가 없어 올 시즌 복귀는 어려울 것으로 보여요.",
+  },
+  {
+    id: "mlb-rooker-knee",
+    photoQuery: "Brent Rooker",
+    teamEn: "Athletics",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "오클랜드 애슬레틱스",
+    player: "브렌트 루커",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "루커, 왼쪽 무릎 수술로 시즌 아웃",
+    summary:
+      "지명타자 브렌트 루커가 7월 초 왼쪽 무릎 수술을 받으며 남은 시즌을 모두 접었어요. 애슬레틱스 타선에 또 한 번 공백이 생겼어요.",
+  },
+  {
+    id: "mlb-langeliers-meniscus",
+    photoQuery: "Shea Langeliers",
+    teamEn: "Athletics",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "오클랜드 애슬레틱스",
+    player: "셰이 랜젤리어스",
+    status: "doubtful",
+    updated: "2026-08-22",
+    headline: "랜젤리어스, 오른쪽 무릎 반월판 파열… 수술 여부 저울질",
+    summary:
+      "애슬레틱스 포수 셰이 랜젤리어스가 주루 플레이 도중 오른쪽 무릎 반월판이 파열됐어요. 수술을 받을 경우 회복까지 6~8주가 걸려 9월 초·중순 복귀가 목표가 될 전망이라, 남은 시즌 출전이 불투명해요.",
+  },
+  {
+    id: "bundesliga-mainz-martel-knee",
+    photoQuery: "Eric Martel",
+    teamEn: "Mainz 05",
+    league: "bundesliga",
+    leagueLabel: "분데스리가",
+    team: "마인츠 05",
+    player: "에리크 마르텔",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "마르텔, 무릎 내측 인대 부상으로 시즌 초반 결장",
+    summary:
+      "쾰른에서 마인츠로 이적한 에리크 마르텔이 두바이 샤바브 알 아흘리와의 연습경기 도중 오른쪽 무릎 내측 인대를 다쳤어요. 정확한 결장 기간은 회복 경과에 따라 정해질 예정이라, 분데스리가 개막을 앞두고 중원 운용에 변수가 생겼어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
