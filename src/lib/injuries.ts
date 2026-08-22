@@ -643,6 +643,20 @@ export const INJURIES: InjuryItem[] = [
       "블루제이스 간판타자 게레로 주니어가 8월 16일 양키스전에서 상대 선수와 충돌해 머리를 다친 뒤 7일 뇌진탕 부상자 명단에 올랐어요. 싱글A 더니든에서 재활 경기를 소화하고 최종 뇌진탕 검사까지 통과하면서, 8월 24일 토요일 뉴욕 원정 양키스전 복귀가 유력해졌어요.",
   },
   {
+    id: "laliga-realmadrid-endrick-tchouameni",
+    photoQuery: "Endrick",
+    teamEn: "Real Madrid",
+    league: "laliga",
+    leagueLabel: "라리가",
+    team: "레알 마드리드",
+    player: "엔드릭 · 추아메니",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "레알 마드리드, 엔드릭·추아메니 라리가 개막전 에스파뇰전 결장",
+    summary:
+      "엔드릭이 경미한 근육 이상을 안고 있어 라리가 개막전인 에스파뇰전 명단에서 빠졌고, 구체적인 복귀 시점도 아직 나오지 않아 다음 경기인 레알 소시에다드전 출전 여부도 불투명해요. 아우렐리앙 추아메니는 허벅지 근육 과부하에서는 회복해 팀 훈련에 합류했지만, 프리시즌 복귀가 늦어 실전 감각이 부족하다는 판단에 따라 이번 경기에는 제외됐어요.",
+  },
+  {
     id: "epl-forest-yates-savona",
     photoQuery: "Ryan Yates",
     teamEn: "Nottingham Forest",
