@@ -657,6 +657,20 @@ export const INJURIES: InjuryItem[] = [
       "엔드릭이 경미한 근육 이상을 안고 있어 라리가 개막전인 에스파뇰전 명단에서 빠졌고, 구체적인 복귀 시점도 아직 나오지 않아 다음 경기인 레알 소시에다드전 출전 여부도 불투명해요. 아우렐리앙 추아메니는 허벅지 근육 과부하에서는 회복해 팀 훈련에 합류했지만, 프리시즌 복귀가 늦어 실전 감각이 부족하다는 판단에 따라 이번 경기에는 제외됐어요.",
   },
   {
+    id: "bundesliga-mainz-nebel-adductor",
+    photoQuery: "Paul Nebel",
+    teamEn: "Mainz 05",
+    league: "bundesliga",
+    leagueLabel: "분데스리가",
+    team: "마인츠 05",
+    player: "파울 네벨",
+    status: "doubtful",
+    updated: "2026-08-22",
+    headline: "네벨, 사타구니 내전근 부상… 포칼 결장 확정, 개막전도 불투명",
+    summary:
+      "마인츠 미드필더 파울 네벨이 호프가르텐 전지훈련 마지막 세션에서 슈팅 동작 중 사타구니 통증을 느꼈고, 귀환 후 정밀 검사에서 내전근 부상이 확인됐어요. 8월 23일 DFB-포칼 1라운드 크리쇼전 결장이 확정됐고, 뒤이은 파더보른과의 분데스리가 개막전 출전 여부도 불투명한 상태예요.",
+  },
+  {
     id: "epl-forest-yates-savona",
     photoQuery: "Ryan Yates",
     teamEn: "Nottingham Forest",
