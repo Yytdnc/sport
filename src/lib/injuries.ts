@@ -49,11 +49,11 @@ export const INJURIES: InjuryItem[] = [
     leagueLabel: "MLB",
     team: "뉴욕 양키스",
     player: "맥스 프리드",
-    status: "out",
-    updated: "2026-08-17",
-    headline: "프리드, 좌완 팔꿈치 골타박상으로 15일 부상자 명단行",
+    status: "doubtful",
+    updated: "2026-08-22",
+    headline: "프리드, 사이드 세션 소화… 라이브 배팅 훈련 앞둬",
     summary:
-      "양키스 선발 프리드가 좌측 팔꿈치 골타박상으로 8월 14일자 소급 적용된 15일 부상자 명단에 올랐어요. 로테이션 복귀 시점은 아직 발표되지 않았어요.",
+      "좌측 팔꿈치 골타박상으로 이탈했던 프리드가 8월 22일 사이드 세션을 소화하며 재활에 속도를 냈어요. 결과에 따라 라이브 배팅 훈련 단계로 넘어갈 수 있어, 최소 이탈 기간인 15일 내 로테이션 복귀 가능성도 남아 있어요.",
   },
   {
     id: "mlb-marte-knee",
@@ -753,6 +753,34 @@ export const INJURIES: InjuryItem[] = [
     headline: "에스파뇰, 레알전 앞두고 키케 가르시아·푸아도 장기 결장",
     summary:
       "에스파뇰이 레알 마드리드와의 개막전을 앞두고 키케 가르시아 없이 나서요. 이달 초 햄스트링을 다친 가르시아는 12월에나 복귀가 가능할 전망이고, 무릎을 다친 하비 푸아도도 최소 11월까지는 그라운드로 돌아오기 어려울 것으로 보여요.",
+  },
+  {
+    id: "mlb-yankees-bellinger-return",
+    photoQuery: "Cody Bellinger",
+    teamEn: "New York Yankees",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "뉴욕 양키스",
+    player: "코디 벨린저",
+    status: "ok",
+    updated: "2026-08-22",
+    headline: "벨린저, 햄스트링 부상 딛고 23일 부상자 명단서 복귀",
+    summary:
+      "왼쪽 햄스트링 긴장으로 이탈했던 코디 벨린저가 8월 22일 직접 다음 날인 23일자로 부상자 명단에서 복귀한다고 밝혔어요. 외야 뎁스에 숨통이 트일 전망이에요.",
+  },
+  {
+    id: "mlb-padres-musgrove-rehab",
+    photoQuery: "Joe Musgrove",
+    teamEn: "San Diego Padres",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "샌디에이고 파드리스",
+    player: "조 머스그로브",
+    status: "doubtful",
+    updated: "2026-08-22",
+    headline: "머스그로브, 토미존 재활 순항… 8월 24일 주 4차 재활 등판 예정",
+    summary:
+      "팔꿈치 토미존 수술에서 회복 중인 조 머스그로브가 곧 불펜 피칭을 소화할 예정이며, 8월 24일이 속한 주에 네 번째 재활 등판을 치를 것으로 보여요. 이후 결과에 따라 1군 콜업 여부가 결정될 전망이에요.",
   },
 ];
 
