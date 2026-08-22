@@ -540,9 +540,9 @@ export const INJURIES: InjuryItem[] = [
     player: "지안카를로 스탠턴",
     status: "doubtful",
     updated: "2026-08-22",
-    headline: "스탠턴, 6월 재발 이후 처음으로 주루 훈련 소화… 재활 순항",
+    headline: "스탠턴, 재활 중 반대쪽 종아리 부담… 시즌 아웃 가능성 커져",
     summary:
-      "오른쪽 종아리 부상으로 이탈한 지안카를로 스탠턴이 6월 재발 이후 처음으로 양키 스타디움에서 주루 훈련을 소화했어요. 에런 분 감독은 종아리 상태가 계속 좋으면 마이너리그 재활 경기 배정이 다음 단계가 될 수 있다고 밝혔어요.",
+      "오른쪽 종아리 부상에서 재활하던 지안카를로 스탠턴이 이번엔 왼쪽 종아리에 중등도 부담을 입으며 복귀가 다시 불투명해졌어요. 에런 분 감독은 '가능성을 배제하지 않는다'면서도 시즌 잔여 기간 내 복귀를 장담하지는 못했어요.",
   },
   {
     id: "mlb-diaz-neck",
@@ -711,6 +711,48 @@ export const INJURIES: InjuryItem[] = [
     headline: "노팅엄 포레스트, 주장 예이츠·사보나 개막전 결장",
     summary:
       "노팅엄 포레스트 주장 라이언 예이츠가 프리시즌 마지막 친선경기부터 결장했고 개막전 복귀도 시간 내에 이루어지지 못했어요. 니콜로 사보나도 함께 결장하며 수비진 운용에 부담이 생겼어요.",
+  },
+  {
+    id: "mlb-yankees-mcmahon-thumb",
+    photoQuery: "Ryan McMahon",
+    teamEn: "New York Yankees",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "뉴욕 양키스",
+    player: "라이언 맥마흔",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "맥마흔, 왼손 엄지 2등급 염좌로 10일 부상자 명단",
+    summary:
+      "라이언 맥마흔이 지난 수요일 오리올스전에서 2루 슬라이딩 도중 왼손 엄지를 다쳤고, 8월 20일자로 소급 적용된 10일 부상자 명단에 올랐어요. 최소 복귀 시점인 8월 30일 전후 활동 재개를 목표로 하고 있어요.",
+  },
+  {
+    id: "epl-arsenal-guimaraes-groin",
+    photoQuery: "Bruno Guimaraes",
+    teamEn: "Arsenal",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "아스널",
+    player: "브루누 기마랑이스",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "기마랑이스, 데뷔전서 사타구니 부상… 코번트리전 벤치도 제외",
+    summary:
+      "아스널로 이적한 브루누 기마랑이스가 커뮤니티 실드 데뷔전 전반전을 마친 뒤 사타구니 통증으로 교체됐어요. 아르테타 감독은 경미한 긴장이라고 밝혔지만, 프리시즌 준비 부족까지 겹치며 코번트리 시티와의 리그 개막전 명단에서도 제외됐어요.",
+  },
+  {
+    id: "laliga-espanyol-garcia-puado",
+    photoQuery: "Kike Garcia",
+    teamEn: "Espanyol",
+    league: "laliga",
+    leagueLabel: "라리가",
+    team: "에스파뇰",
+    player: "키케 가르시아 · 하비 푸아도",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "에스파뇰, 레알전 앞두고 키케 가르시아·푸아도 장기 결장",
+    summary:
+      "에스파뇰이 레알 마드리드와의 개막전을 앞두고 키케 가르시아 없이 나서요. 이달 초 햄스트링을 다친 가르시아는 12월에나 복귀가 가능할 전망이고, 무릎을 다친 하비 푸아도도 최소 11월까지는 그라운드로 돌아오기 어려울 것으로 보여요.",
   },
 ];
 
