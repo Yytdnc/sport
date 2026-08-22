@@ -163,11 +163,268 @@ const COUNTRY_NAME_KO: Record<string, string> = {
   Zimbabwe: "짐바브웨",
 };
 
-/** country|leagueName -> Korean name, for the rare case a bare league name needs a
- * different translation depending on the country (e.g. France's "Ligue 1" has the
- * specific nickname "리그앙", while other countries literally named "Ligue 1" don't). */
-const LEAGUE_NAME_KO_BY_COUNTRY: Record<string, string> = {
-  "France|Ligue 1": "리그앙",
+/**
+ * "Country|EnglishLeagueName" -> exact Korean label, transcribed directly from
+ * a reference live-score site's own league sidebar (user-supplied screenshots).
+ * This is ground truth, not a guess — it also doubles as the CURATED_LEAGUES
+ * allow-list: only leagues listed here are shown on the soccer scoreboard,
+ * since the raw API-FOOTBALL feed includes 300+ obscure regional/youth/
+ * reserve competitions per day that the reference site doesn't surface either.
+ */
+const CURATED_LEAGUES: Record<string, string> = {
+  // 인기 리그
+  "England|Premier League": "프리미어리그",
+  "Spain|La Liga": "라리가",
+  "Italy|Serie A": "세리에 A",
+  "France|Ligue 1": "리그 1",
+  "South-Korea|K League 1": "K리그 1",
+
+  // 국제
+  "World|ASEAN Championship": "ASEAN 챔피언십",
+  "World|Friendlies Clubs": "클럽 친선",
+
+  // 대한민국
+  "South-Korea|K League 2": "K리그 2",
+  "South-Korea|K3 League": "K3리그",
+  "South-Korea|WK-League": "WK리그",
+
+  // 일본
+  "Japan|J1 League": "J1 리그",
+  "Japan|J2 League": "J2 리그",
+
+  // 잉글랜드
+  "England|FA Cup": "FA컵",
+  "England|Championship": "잉글랜드 챔피언십",
+  "England|League One": "잉글랜드 리그 원",
+  "England|League Two": "잉글랜드 리그 투",
+  "England|National League": "잉글랜드 내셔널리그",
+
+  // 스페인
+  "Spain|Segunda División": "라리가 2",
+  "Spain|Segunda Division": "라리가 2",
+
+  // 독일
+  "Germany|DFB Pokal": "DFB-포칼",
+  "Germany|Super Cup": "독일 슈퍼컵",
+  "Germany|Bundesliga": "분데스리가",
+
+  // 이탈리아
+  "Italy|Serie B": "세리에 B",
+
+  // 프랑스
+  "France|Ligue 2": "리그 2",
+
+  // 네덜란드
+  "Netherlands|Eredivisie": "에레디비시",
+  "Netherlands|Eerste Divisie": "에이르스터 디비시",
+
+  // 포르투갈
+  "Portugal|Primeira Liga": "프리메이라 리가",
+  "Portugal|Segunda Liga": "포르투갈 리가 2",
+
+  // 튀르키예
+  "Turkey|Süper Lig": "쉬페르 리그",
+  "Turkey|1. Lig": "튀르키예 1.리그",
+
+  // 벨기에
+  "Belgium|Jupiler Pro League": "주피러 프로 리그",
+  "Belgium|Challenger Pro League": "벨기에 챌린저 프로",
+
+  // 룩셈부르크
+  "Luxembourg|National Division": "룩셈부르크 내셔널 디비전",
+
+  // 스코틀랜드
+  "Scotland|Championship": "스코티시 챔피언십",
+  "Scotland|League One": "스코티시 리그 원",
+  "Scotland|League Two": "스코티시 리그 투",
+  "Scotland|Premiership": "스코틀랜드 프리미어십",
+
+  // 웨일스
+  "Wales|Premier League": "웨일스 컴리 프리미어",
+
+  // 그리스
+  "Greece|Super League 1": "그리스 슈퍼리그",
+
+  // 폴란드
+  "Poland|Ekstraklasa": "에크스트라클라사",
+  "Poland|I Liga": "폴란드 I 리가",
+
+  // 불가리아
+  "Bulgaria|First League": "불가리아 퍼스트 리그",
+
+  // 루마니아
+  "Romania|Liga I": "루마니아 리가 I",
+  "Romania|Liga II": "루마니아 리가 II",
+
+  // 스위스
+  "Switzerland|Super League": "스위스 슈퍼리가",
+  "Switzerland|Challenge League": "스위스 챌린지 리가",
+
+  // 아르메니아
+  "Armenia|Premier League": "아르메니아 프리미어 리그",
+
+  // 오스트리아
+  "Austria|Bundesliga": "오스트리아 분데스리가",
+  "Austria|2. Liga": "오스트리아 2.리가",
+
+  // 체코
+  "Czech-Republic|Czech Liga": "체코 1부",
+
+  // 크로아티아
+  "Croatia|HNL": "크로아티아 HNL",
+
+  // 헝가리
+  "Hungary|NB I": "헝가리 NB I",
+  "Hungary|NB II": "헝가리 NB II",
+
+  // 세르비아
+  "Serbia|Super Liga": "세르비아 슈퍼리가",
+
+  // 슬로바키아
+  "Slovakia|Super Liga": "슬로바키아 슈퍼리가",
+
+  // 슬로베니아
+  "Slovenia|1. SNL": "슬로베니아 1. SNL",
+
+  // 몬테네그로
+  "Montenegro|First League": "몬테네그로 1부",
+
+  // 덴마크
+  "Denmark|1. Division": "덴마크 1.디비전",
+
+  // 아일랜드
+  "Ireland|First Division": "아일랜드 1부 디비전",
+  "Ireland|Premier Division": "아일랜드 프리미어",
+
+  // 보스니아
+  "Bosnia|Premijer Liga": "보스니아 프리미어 리가",
+
+  // 알바니아
+  "Albania|Superliga": "알바니아 슈페리리가",
+
+  // 라트비아
+  "Latvia|Virsliga": "라트비아 비르슬리가",
+
+  // 에스토니아
+  "Estonia|Meistriliiga": "에스토니아 메이스트리리가",
+
+  // 벨라루스
+  "Belarus|Premier League": "벨라루스 프리미어",
+
+  // 조지아
+  "Georgia|Erovnuli Liga": "조지아 에로브눌리",
+
+  // 아제르바이잔
+  "Azerbaijan|Premyer Liqa": "아제르바이잔 프리미어",
+
+  // 러시아
+  "Russia|Premier League": "러시아 프리미어리그",
+  "Russia|First League": "러시아 FNL",
+
+  // 노르웨이
+  "Norway|1. Division": "노르웨이 1부 디비전",
+
+  // 스웨덴
+  "Sweden|Allsvenskan": "스웨덴 알스벤스칸",
+  "Sweden|Ettan - Norra": "스웨덴 에탄 노라",
+  "Sweden|Ettan - Södra": "스웨덴 에탄 쇠드라",
+
+  // 핀란드
+  "Finland|Veikkausliiga": "핀란드 베이카우스리가",
+  "Finland|Ykkösliiga": "핀란드 위꾀스리가",
+  "Finland|Ykkönen": "핀란드 위꾀넨",
+  "Finland|Kakkonen - Lohko A": "핀란드 카코넨 A",
+  "Finland|Kakkonen - Lohko B": "핀란드 카코넨 B",
+  "Finland|Kakkonen - Lohko C": "핀란드 카코넨 C",
+
+  // 아이슬란드
+  "Iceland|1. Deild": "아이슬란드 1부 데일드",
+
+  // 페로 제도
+  "Faroe-Islands|1. Deild": "페로 제도 프리미어",
+
+  // 미국
+  "USA|NWSL Women": "NWSL (미국 여자)",
+
+  // 캐나다
+  "Canada|Canadian Premier League": "캐나다 프리미어 리그",
+
+  // 멕시코
+  "Mexico|Liga MX": "리가 MX",
+  "Mexico|Liga de Expansión MX": "멕시코 리가 엑스판시온",
+
+  // 코스타리카
+  "Costa-Rica|Primera División": "코스타리카 프리메라",
+
+  // 온두라스
+  "Honduras|Liga Nacional": "온두라스 리가 나시오날",
+
+  // 파나마
+  "Panama|Liga Panameña de Fútbol": "파나마 LPF",
+
+  // 엘살바도르
+  "El-Salvador|Primera Division": "엘살바도르 프리메라",
+
+  // 브라질
+  "Brazil|Serie A": "브라질 세리에 A",
+
+  // 칠레
+  "Chile|Primera División": "칠레 프리메라 디비시온",
+  "Chile|Primera B": "칠레 프리메라 B",
+
+  // 에콰도르
+  "Ecuador|Liga Pro": "에콰도르 리가 프로",
+
+  // 콜롬비아
+  "Colombia|Primera A": "콜롬비아 프리메라 A",
+
+  // 페루
+  "Peru|Primera División": "페루 프리메라 디비시온",
+
+  // 베네수엘라
+  "Venezuela|Primera División": "베네수엘라 프리메라 디비시온",
+
+  // 아르헨티나
+  "Argentina|Primera Nacional": "아르헨티나 프리메라 나시오날",
+  "Argentina|Liga Profesional Argentina": "아르헨티나 프리메라",
+
+  // 이집트
+  "Egypt|Premier League": "이집트 프리미어 리그",
+
+  // UAE
+  "United-Arab-Emirates|Pro League": "UAE 프로 리그",
+
+  // 카타르
+  "Qatar|Stars League": "카타르 스타스 리그",
+
+  // 이스라엘
+  "Israel|Ligat Ha'al": "이스라엘 리가트 하알",
+
+  // 사우디아라비아
+  "Saudi-Arabia|Pro League": "사우디 프로 리그",
+
+  // 중국
+  "China|Super League": "중국 슈퍼리그",
+  "China|League One": "중국 리그원",
+  "China|League Two": "중국 리그투",
+
+  // 카자흐스탄
+  "Kazakhstan|Premier League": "카자흐스탄 프리미어",
+
+  // 우즈베키스탄
+  "Uzbekistan|Pro League A": "우즈베키스탄 슈퍼리가",
+
+  // 볼리비아
+  "Bolivia|Primera División": "볼리비아 프리메라",
+
+  // 우루과이
+  "Uruguay|Primera División": "우루과이 프리메라",
+
+  // 이라크
+  "Iraq|Iraqi League": "이라크 스타스 리그",
+
+  // 파라과이
+  "Paraguay|Division Profesional - Clausura": "파라과이 프리메라",
 };
 
 /** Country-agnostic exact league-name translations for well-known/branded competitions. */
@@ -332,13 +589,24 @@ function applyGenericTerms(input: string): string {
   return s;
 }
 
-export function toKoreanCountry(country: string): string {
+export function toKoreanCountry(country: string, overrides?: Record<string, string>): string {
+  if (overrides?.[country]) return overrides[country];
   return COUNTRY_NAME_KO[country] ?? country;
 }
 
-export function toKoreanLeagueName(country: string, name: string): string {
-  const byCountry = LEAGUE_NAME_KO_BY_COUNTRY[`${country}|${name}`];
-  if (byCountry) return byCountry;
+/** Allow-list used to trim the raw API-FOOTBALL feed (300+ leagues/day,
+ * mostly obscure regional/youth/reserve competitions) down to the curated
+ * set a real reference site actually surfaces. */
+export function isCuratedLeague(country: string, name: string): boolean {
+  return `${country}|${name}` in CURATED_LEAGUES;
+}
+
+export function toKoreanLeagueName(country: string, name: string, overrides?: Record<string, string>): string {
+  if (overrides?.[`${country}|${name}`]) return overrides[`${country}|${name}`];
+  if (overrides?.[name]) return overrides[name];
+
+  const curated = CURATED_LEAGUES[`${country}|${name}`];
+  if (curated) return curated;
 
   const exact = LEAGUE_NAME_KO[name];
   if (exact) return exact;

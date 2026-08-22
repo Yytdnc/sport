@@ -325,7 +325,9 @@ const TEAM_NAME_KO: Record<string, string> = {
   "Jubilo Iwata": "주빌로 이와타",
 };
 
-export function toKoreanTeamName(name: string): string {
+export function toKoreanTeamName(name: string, overrides?: Record<string, string>): string {
+  if (overrides?.[name]) return overrides[name];
+
   const direct = TEAM_NAME_KO[name];
   if (direct) return direct;
 

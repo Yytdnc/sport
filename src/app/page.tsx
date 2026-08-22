@@ -4,6 +4,13 @@ import FloatingChatBubble from "@/components/chat/FloatingChatBubble";
 import { getAllSportsForDate } from "@/lib/scores/aggregate";
 import { todayISO } from "@/lib/scores/utils";
 
+// "Today" must be evaluated per-request, not baked into a statically cached
+// page — otherwise a stale ISR render serves yesterday's date in the SSR
+// HTML while a fresher RSC payload/client clock disagrees, causing a
+// hydration mismatch. The actual data fetches below stay cheap via their
+// own unstable_cache windows, so this doesn't reintroduce the quota risk.
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const date = todayISO();
   const initialData = await getAllSportsForDate(date);

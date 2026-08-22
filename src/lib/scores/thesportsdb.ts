@@ -2,6 +2,7 @@ import { unstable_cache } from "next/cache";
 import type { League, Match, MatchStatus, SportId } from "@/lib/types";
 import { THESPORTSDB_LEAGUES, type TheSportsDbLeague } from "@/lib/scores/leagues";
 import { toKoreanTeamName } from "@/lib/scores/team-names-ko";
+import { getOverridesMap, type OverridesMap } from "@/lib/scores/overrides";
 
 const API_BASE = "https://www.thesportsdb.com/api/v1/json/3";
 
@@ -60,7 +61,7 @@ function statusText(status: MatchStatus, elapsedMinutes: number | null, timeLoca
   return timeLocal ? timeLocal.slice(0, 5) : "예정";
 }
 
-function toMatch(ev: TsdbEvent, league: TheSportsDbLeague): Match {
+function toMatch(ev: TsdbEvent, league: TheSportsDbLeague, overrides: OverridesMap): Match {
   const { status, elapsedMinutes } = statusOf(ev);
   const leagueRef: League = {
     id: league.id,
@@ -73,8 +74,8 @@ function toMatch(ev: TsdbEvent, league: TheSportsDbLeague): Match {
     id: `tsdb-${ev.idEvent}`,
     sportId: league.sportId,
     league: leagueRef,
-    home: { id: `${league.id}-home-${ev.strHomeTeam}`, name: toKoreanTeamName(ev.strHomeTeam) },
-    away: { id: `${league.id}-away-${ev.strAwayTeam}`, name: toKoreanTeamName(ev.strAwayTeam) },
+    home: { id: `${league.id}-home-${ev.strHomeTeam}`, name: toKoreanTeamName(ev.strHomeTeam, overrides.team) },
+    away: { id: `${league.id}-away-${ev.strAwayTeam}`, name: toKoreanTeamName(ev.strAwayTeam, overrides.team) },
     homeScore: ev.intHomeScore != null ? Number(ev.intHomeScore) : null,
     awayScore: ev.intAwayScore != null ? Number(ev.intAwayScore) : null,
     status,
@@ -87,25 +88,31 @@ function toMatch(ev: TsdbEvent, league: TheSportsDbLeague): Match {
   };
 }
 
-async function loadLeague(league: TheSportsDbLeague): Promise<Match[]> {
+async function loadLeagueEvents(league: TheSportsDbLeague): Promise<{ league: TheSportsDbLeague; events: TsdbEvent[] }> {
   const [next, past] = await Promise.all([
     fetchEvents(`${API_BASE}/eventsnextleague.php?id=${league.apiId}`),
     fetchEvents(`${API_BASE}/eventspastleague.php?id=${league.apiId}`),
   ]);
-  return [...past, ...next].map((ev) => toMatch(ev, league));
+  return { league, events: [...past, ...next] };
 }
 
-async function loadSportUncached(sportId: SportId): Promise<Match[]> {
+async function loadSportEventsUncached(sportId: SportId) {
   const leagues = THESPORTSDB_LEAGUES.filter((l) => l.sportId === sportId);
   if (leagues.length === 0) return [];
-  const results = await Promise.all(leagues.map(loadLeague));
-  return results.flat();
+  return Promise.all(leagues.map(loadLeagueEvents));
 }
 
 /** Cached per-sport for 5 minutes — TheSportsDB free tier has no strict quota,
- * but this still avoids hammering it on every client poll. */
-export const getTheSportsDbMatches = unstable_cache(
-  async (sportId: SportId) => loadSportUncached(sportId),
-  ["thesportsdb-matches"],
+ * but this still avoids hammering it on every client poll. Caches the raw
+ * events, not the mapped Match[], so admin name overrides apply immediately
+ * instead of waiting on this window. */
+const getCachedSportEvents = unstable_cache(
+  async (sportId: SportId) => loadSportEventsUncached(sportId),
+  ["thesportsdb-events"],
   { revalidate: 300 }
 );
+
+export async function getTheSportsDbMatches(sportId: SportId): Promise<Match[]> {
+  const [leagueEvents, overrides] = await Promise.all([getCachedSportEvents(sportId), getOverridesMap()]);
+  return leagueEvents.flatMap(({ league, events }) => events.map((ev) => toMatch(ev, league, overrides)));
+}

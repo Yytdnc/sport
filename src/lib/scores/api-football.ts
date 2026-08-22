@@ -2,7 +2,9 @@ import { unstable_cache } from "next/cache";
 import type { League, Match, MatchStatus, ScoresResponse } from "@/lib/types";
 import { POPULAR_SOCCER_LEAGUES } from "@/lib/scores/leagues";
 import { toKoreanTeamName } from "@/lib/scores/team-names-ko";
-import { computeLeagueTier, toKoreanCountry, toKoreanLeagueName } from "@/lib/scores/league-names-ko";
+import { computeLeagueTier, isCuratedLeague, toKoreanCountry, toKoreanLeagueName } from "@/lib/scores/league-names-ko";
+import { getOverridesMap, type OverridesMap } from "@/lib/scores/overrides";
+import { getLeagueVisibilityMap, type LeagueVisibilityMap } from "@/lib/scores/league-visibility";
 
 const API_HOST = "https://v3.football.api-sports.io";
 
@@ -61,25 +63,40 @@ function statusTextOf(short: string, status: MatchStatus, elapsed: number | null
   return d.toLocaleTimeString("ko-KR", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Asia/Seoul" });
 }
 
-function toMatch(fx: ApiFootballFixture): Match {
+function toMatch(fx: ApiFootballFixture, overrides: OverridesMap, visibility: LeagueVisibilityMap): Match | null {
+  const visibilityEntry = visibility[`${fx.league.country}|${fx.league.name}`];
+  if (visibilityEntry?.hidden) return null;
+  // Only show the curated set of well-known leagues by default. An admin
+  // row for a league (hidden: false) always wins either way — that's how
+  // a non-curated league gets added back in via the admin page.
+  if (!visibilityEntry && !isCuratedLeague(fx.league.country, fx.league.name)) return null;
+
   const status = STATUS_MAP[fx.fixture.status.short] ?? "scheduled";
   const popular = POPULAR_SOCCER_LEAGUES.has(`${fx.league.country}|${fx.league.name}`);
   const league: League = {
     id: `af-${fx.league.id}`,
     sportId: "soccer",
-    name: toKoreanLeagueName(fx.league.country, fx.league.name),
-    country: toKoreanCountry(fx.league.country),
+    name: toKoreanLeagueName(fx.league.country, fx.league.name, overrides.league),
+    country: toKoreanCountry(fx.league.country, overrides.country),
     countryFlag: fx.league.flag ?? undefined,
     logo: fx.league.logo,
     popular,
-    tier: computeLeagueTier(fx.league.country, fx.league.name, popular),
+    tier: visibilityEntry?.priority ?? computeLeagueTier(fx.league.country, fx.league.name, popular),
   };
   return {
     id: `af-${fx.fixture.id}`,
     sportId: "soccer",
     league,
-    home: { id: `af-team-${fx.teams.home.id}`, name: toKoreanTeamName(fx.teams.home.name), logo: fx.teams.home.logo },
-    away: { id: `af-team-${fx.teams.away.id}`, name: toKoreanTeamName(fx.teams.away.name), logo: fx.teams.away.logo },
+    home: {
+      id: `af-team-${fx.teams.home.id}`,
+      name: toKoreanTeamName(fx.teams.home.name, overrides.team),
+      logo: fx.teams.home.logo,
+    },
+    away: {
+      id: `af-team-${fx.teams.away.id}`,
+      name: toKoreanTeamName(fx.teams.away.name, overrides.team),
+      logo: fx.teams.away.logo,
+    },
     homeScore: fx.goals.home,
     awayScore: fx.goals.away,
     status,
@@ -92,7 +109,7 @@ function toMatch(fx: ApiFootballFixture): Match {
   };
 }
 
-async function fetchFixturesUncached(date: string): Promise<Match[]> {
+async function fetchFixturesUncached(date: string): Promise<ApiFootballFixture[]> {
   const key = process.env.API_FOOTBALL_KEY;
   if (!key) return [];
   const res = await fetch(`${API_HOST}/fixtures?date=${date}`, {
@@ -100,7 +117,7 @@ async function fetchFixturesUncached(date: string): Promise<Match[]> {
   });
   if (!res.ok) throw new Error(`api-football ${res.status}`);
   const data = (await res.json()) as { response: ApiFootballFixture[] };
-  return data.response.map(toMatch);
+  return data.response;
 }
 
 /**
@@ -108,6 +125,10 @@ async function fetchFixturesUncached(date: string): Promise<Match[]> {
  * between us and burning through the 100-req/day free quota — every visitor
  * hits this cache, not the upstream API. A 15-minute window keeps worst-case
  * upstream calls at ~96/day even under continuous traffic.
+ *
+ * Caches the RAW upstream response, not the mapped Match[] — translation
+ * (including admin overrides) is applied fresh on every call so an admin
+ * edit shows up without waiting on this 15-minute window.
  */
 const getCachedFixtures = unstable_cache(
   async (date: string) => fetchFixturesUncached(date),
@@ -120,7 +141,14 @@ export async function getSoccerFixtures(date: string): Promise<ScoresResponse> {
     return { ok: false, reason: "not_configured", matches: [] };
   }
   try {
-    const matches = await getCachedFixtures(date);
+    const [fixtures, overrides, visibility] = await Promise.all([
+      getCachedFixtures(date),
+      getOverridesMap(),
+      getLeagueVisibilityMap(),
+    ]);
+    const matches = fixtures
+      .map((fx) => toMatch(fx, overrides, visibility))
+      .filter((m): m is Match => m !== null);
     return { ok: true, matches };
   } catch {
     return { ok: false, reason: "upstream_error", matches: [] };

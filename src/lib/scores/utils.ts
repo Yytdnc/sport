@@ -11,10 +11,23 @@ export function isoDateOf(isoTimestamp: string): string {
   return new Date(isoTimestamp).toLocaleDateString("sv-SE", { timeZone: KST });
 }
 
+// A "YYYY-MM-DD" string has no inherent timezone — parsing it into a Date
+// and reading it back with LOCAL getters (getDate/getMonth/getDay) silently
+// reflects the RUNTIME's local timezone, not the calendar date the string
+// names. That previously showed the wrong (often previous) day whenever the
+// server ran outside KST, and could disagree with the browser's own local
+// timezone, which is exactly what causes a hydration mismatch. Anchoring
+// with Date.UTC() and reading back with UTC getters sidesteps this entirely
+// — the components round-trip exactly regardless of runtime timezone.
+function parseISOToUTCDate(dateISO: string): Date {
+  const [year, month, day] = dateISO.split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, day));
+}
+
 export function addDaysISO(dateISO: string, days: number): string {
-  const d = new Date(`${dateISO}T00:00:00+09:00`);
-  d.setDate(d.getDate() + days);
-  return d.toLocaleDateString("sv-SE", { timeZone: KST });
+  const d = parseISOToUTCDate(dateISO);
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
 }
 
 export function filterMatchesByDate(matches: Match[], dateISO: string): Match[] {
@@ -22,17 +35,17 @@ export function filterMatchesByDate(matches: Match[], dateISO: string): Match[] 
 }
 
 export function formatDateHeading(dateISO: string): string {
-  const d = new Date(`${dateISO}T00:00:00+09:00`);
-  const month = d.getMonth() + 1;
-  const day = d.getDate();
-  const weekday = WEEKDAYS[d.getDay()];
+  const d = parseISOToUTCDate(dateISO);
+  const month = d.getUTCMonth() + 1;
+  const day = d.getUTCDate();
+  const weekday = WEEKDAYS[d.getUTCDay()];
   return `${month}월 ${day}일(${weekday})`;
 }
 
 export function formatDateHeadingLong(dateISO: string): string {
-  const d = new Date(`${dateISO}T00:00:00+09:00`);
-  const weekday = WEEKDAYS[d.getDay()];
-  return `${d.getFullYear()}년${String(d.getMonth() + 1).padStart(2, "0")}월${String(d.getDate()).padStart(2, "0")}일(${weekday})`;
+  const d = parseISOToUTCDate(dateISO);
+  const weekday = WEEKDAYS[d.getUTCDay()];
+  return `${d.getUTCFullYear()}년${String(d.getUTCMonth() + 1).padStart(2, "0")}월${String(d.getUTCDate()).padStart(2, "0")}일(${weekday})`;
 }
 
 export interface DateStripDay {
@@ -47,11 +60,11 @@ export function buildDateStrip(centerISO: string, before = 5, after = 5): DateSt
   const days: DateStripDay[] = [];
   for (let offset = -before; offset <= after; offset++) {
     const dateISO = addDaysISO(centerISO, offset);
-    const d = new Date(`${dateISO}T00:00:00+09:00`);
+    const d = parseISOToUTCDate(dateISO);
     days.push({
       dateISO,
-      weekday: WEEKDAYS[d.getDay()],
-      dayLabel: `${d.getMonth() + 1}/${d.getDate()}`,
+      weekday: WEEKDAYS[d.getUTCDay()],
+      dayLabel: `${d.getUTCMonth() + 1}/${d.getUTCDate()}`,
       isToday: dateISO === today,
     });
   }

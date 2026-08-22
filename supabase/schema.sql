@@ -72,3 +72,41 @@ create policy "chat_messages_insert" on chat_messages
 
 -- 실시간 브로드캐스트를 위해 Realtime publication에 추가
 alter publication supabase_realtime add table chat_messages;
+
+-- 어드민 페이지에서 관리하는 팀명/리그명 한글 번역 오버라이드
+-- (코드에 내장된 사전보다 우선 적용됨). 쓰기는 어드민 API 라우트가
+-- service_role 키로만 수행하므로, RLS는 조회만 열어두면 충분합니다.
+create table if not exists name_overrides (
+  id bigint generated always as identity primary key,
+  kind text not null check (kind in ('team', 'league', 'country')),
+  original_name text not null,
+  country text,
+  korean_name text not null check (char_length(korean_name) between 1 and 120),
+  created_at timestamptz not null default now(),
+  unique (kind, original_name, country)
+);
+
+alter table name_overrides enable row level security;
+
+create policy "name_overrides_select" on name_overrides
+  for select using (true);
+-- insert/update/delete: 의도적으로 정책 없음 — anon/authenticated 모두 쓰기 불가.
+-- 어드민 API 라우트가 service_role 키(RLS 우회)로만 씁니다.
+
+-- 어드민 페이지에서 리그를 숨기거나(체크) 우선순위를 조정하는 설정.
+-- hidden=true인 리그는 라이브 스코어에서 아예 제외됩니다.
+create table if not exists league_visibility (
+  id bigint generated always as identity primary key,
+  country text not null,
+  league_name text not null,
+  hidden boolean not null default false,
+  priority integer,
+  created_at timestamptz not null default now(),
+  unique (country, league_name)
+);
+
+alter table league_visibility enable row level security;
+
+create policy "league_visibility_select" on league_visibility
+  for select using (true);
+-- insert/update/delete: 의도적으로 정책 없음 — 어드민 API 라우트가 service_role 키로만 씁니다.
