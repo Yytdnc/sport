@@ -15,16 +15,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/style.css?v=6" />
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="index.html"><span class="logo-emoji">⚽</span>Sport<span class="accent">Pick</span></a>
-    <nav>
-      <a class="active" href="index.html">홈</a>
-      <a href="privacy.html">개인정보처리방침</a>
-    </nav>
+    <div class="topbar-left">
+      <a class="brand" href="index.html"><span class="logo-emoji">⚽</span>Sport<span class="accent">Pick</span></a>
+      <nav>
+        <a class="active" href="index.html">홈</a>
+        <a href="community.html">커뮤니티</a>
+        <a href="privacy.html">개인정보처리방침</a>
+      </nav>
+    </div>
+    <div class="auth-area" id="auth-area">
+      <button type="button" class="btn-ghost" id="btn-login">로그인</button>
+      <button type="button" class="btn-accent" id="btn-signup">회원가입</button>
+    </div>
   </header>
+
+  <div class="modal-overlay" id="auth-modal" hidden>
+    <div class="modal">
+      <button type="button" class="modal-close" id="modal-close" aria-label="닫기">&times;</button>
+      <div class="modal-tabs">
+        <button type="button" class="modal-tab active" data-mode="login">로그인</button>
+        <button type="button" class="modal-tab" data-mode="signup">회원가입</button>
+      </div>
+      <h3 id="auth-modal-title">로그인</h3>
+      <p class="modal-sub" id="auth-modal-sub">SportPick 계정으로 로그인하세요.</p>
+      <form id="auth-form">
+        <label>이메일
+          <input type="email" id="auth-email" required autocomplete="email" />
+        </label>
+        <label>비밀번호
+          <input type="password" id="auth-password" required minlength="6" autocomplete="current-password" />
+        </label>
+        <p class="auth-error" id="auth-error" hidden></p>
+        <p class="auth-info" id="auth-info" hidden></p>
+        <button type="submit" class="btn-accent full" id="auth-submit">로그인</button>
+      </form>
+    </div>
+  </div>
 
   <main>
     <section class="hero wrap">
@@ -38,6 +68,12 @@
         <h2><span class="material-symbols-outlined">scoreboard</span> 오늘의 경기 일정 &amp; 결과</h2>
         <span class="live-indicator"><span class="pulse-dot"></span>TheSportsDB 실시간 연동</span>
       </div>
+      <div class="sport-tabs" id="sport-tabs"></div>
+      <div class="date-tabs">
+        <button type="button" class="date-tab" data-date="yesterday">어제</button>
+        <button type="button" class="date-tab active" data-date="today">오늘</button>
+        <button type="button" class="date-tab" data-date="tomorrow">내일</button>
+      </div>
       <div class="league-tabs">
         <button type="button" class="score-league-tab league-tab active" data-league="all">전체</button>
         <button type="button" class="score-league-tab league-tab" data-league="mlb">MLB</button>
@@ -46,7 +82,22 @@
         <button type="button" class="score-league-tab league-tab" data-league="ligue1">리그앙</button>
         <button type="button" class="score-league-tab league-tab" data-league="bundesliga">분데스리가</button>
       </div>
-      <div class="score-list" id="score-list"></div>
+
+      <div class="live-layout">
+        <div class="score-board" id="score-list"></div>
+
+        <aside class="live-chat">
+          <div class="chat-head">
+            <span><span class="material-symbols-outlined" style="font-size:18px;">forum</span> 실시간 채팅</span>
+            <span class="chat-online" id="chat-online-count">- 명 접속 중</span>
+          </div>
+          <div class="chat-messages" id="chat-messages"></div>
+          <form id="chat-form" class="chat-form">
+            <input type="text" id="chat-input" placeholder="메시지를 입력하세요" maxlength="300" autocomplete="off" />
+            <button type="submit" class="btn-accent">전송</button>
+          </form>
+        </aside>
+      </div>
     </section>
 
     <section class="section wrap">
@@ -72,13 +123,19 @@
   <footer>
     <div class="foot-links">
       <a href="index.html">홈</a>
+      <a href="community.html">커뮤니티</a>
       <a href="privacy.html">개인정보처리방침</a>
     </div>
     <p>© 2026 SportPick. 본 사이트의 정보는 참고용이며 베팅을 권장하지 않습니다.</p>
   </footer>
 
-  <script src="js/injury-data.js?v=2"></script>
-  <script src="js/main.js?v=3"></script>
-  <script src="js/sports-scores.js?v=1"></script>
+  <script src="js/injury-data.js?v=3"></script>
+  <script src="js/main.js?v=4"></script>
+  <script src="js/sports-scores.js?v=3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js?v=1"></script>
+  <script src="js/supabase-client.js?v=1"></script>
+  <script src="js/auth.js?v=1"></script>
+  <script src="js/chat.js?v=1"></script>
 </body>
 </html>

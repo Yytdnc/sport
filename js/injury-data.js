@@ -6,6 +6,8 @@
 const INJURIES = [
   {
     id: "mlb-judge-rib",
+    photoQuery: "Aaron Judge",
+    teamEn: "New York Yankees",
     league: "mlb",
     leagueLabel: "MLB",
     team: "뉴욕 양키스",
@@ -17,6 +19,8 @@ const INJURIES = [
   },
   {
     id: "mlb-fried-elbow",
+    photoQuery: "Max Fried",
+    teamEn: "New York Yankees",
     league: "mlb",
     leagueLabel: "MLB",
     team: "뉴욕 양키스",
@@ -28,6 +32,8 @@ const INJURIES = [
   },
   {
     id: "mlb-marte-knee",
+    photoQuery: "Ketel Marte",
+    teamEn: "Arizona Diamondbacks",
     league: "mlb",
     leagueLabel: "MLB",
     team: "애리조나 다이아몬드백스",
@@ -39,6 +45,8 @@ const INJURIES = [
   },
   {
     id: "mlb-abrams-ankle",
+    photoQuery: "CJ Abrams",
+    teamEn: "Washington Nationals",
     league: "mlb",
     leagueLabel: "MLB",
     team: "워싱턴 내셔널스",
@@ -50,6 +58,8 @@ const INJURIES = [
   },
   {
     id: "mlb-garcia-hamstring",
+    photoQuery: "Maikel Garcia",
+    teamEn: "Kansas City Royals",
     league: "mlb",
     leagueLabel: "MLB",
     team: "캔자스시티 로열스",
@@ -61,6 +71,8 @@ const INJURIES = [
   },
   {
     id: "epl-arsenal-saliba-timber",
+    photoQuery: "William Saliba",
+    teamEn: "Arsenal",
     league: "epl",
     leagueLabel: "EPL",
     team: "아스널",
@@ -72,6 +84,8 @@ const INJURIES = [
   },
   {
     id: "epl-mancity-doku",
+    photoQuery: "Jeremy Doku",
+    teamEn: "Manchester City",
     league: "epl",
     leagueLabel: "EPL",
     team: "맨체스터 시티",
@@ -83,6 +97,8 @@ const INJURIES = [
   },
   {
     id: "epl-manutd-ugarte-deligt",
+    photoQuery: "Manuel Ugarte",
+    teamEn: "Manchester United",
     league: "epl",
     leagueLabel: "EPL",
     team: "맨체스터 유나이티드",
@@ -94,6 +110,8 @@ const INJURIES = [
   },
   {
     id: "epl-spurs-porro-vandeven",
+    photoQuery: "Pedro Porro",
+    teamEn: "Tottenham",
     league: "epl",
     leagueLabel: "EPL",
     team: "토트넘 홋스퍼",
@@ -105,6 +123,8 @@ const INJURIES = [
   },
   {
     id: "laliga-realmadrid-rodrygo",
+    photoQuery: "Rodrygo",
+    teamEn: "Real Madrid",
     league: "laliga",
     leagueLabel: "라리가",
     team: "레알 마드리드",
@@ -116,6 +136,8 @@ const INJURIES = [
   },
   {
     id: "laliga-realmadrid-militao-mendy",
+    photoQuery: "Eder Militao",
+    teamEn: "Real Madrid",
     league: "laliga",
     leagueLabel: "라리가",
     team: "레알 마드리드",
@@ -127,6 +149,8 @@ const INJURIES = [
   },
   {
     id: "ligue1-monaco-pogba",
+    photoQuery: "Paul Pogba",
+    teamEn: "Monaco",
     league: "ligue1",
     leagueLabel: "리그앙",
     team: "AS 모나코",
@@ -138,6 +162,8 @@ const INJURIES = [
   },
   {
     id: "ligue1-angers-belkebla",
+    photoQuery: "Haris Belkebla",
+    teamEn: "Angers",
     league: "ligue1",
     leagueLabel: "리그앙",
     team: "앙제",
@@ -149,6 +175,8 @@ const INJURIES = [
   },
   {
     id: "mlb-soderstrom-hip",
+    photoQuery: "Tyler Soderstrom",
+    teamEn: "Athletics",
     league: "mlb",
     leagueLabel: "MLB",
     team: "오클랜드 애슬레틱스",
@@ -160,6 +188,8 @@ const INJURIES = [
   },
   {
     id: "mlb-wilson-shoulder",
+    photoQuery: "Jacob Wilson",
+    teamEn: "Athletics",
     league: "mlb",
     leagueLabel: "MLB",
     team: "오클랜드 애슬레틱스",
@@ -171,6 +201,8 @@ const INJURIES = [
   },
   {
     id: "epl-brighton-minteh",
+    photoQuery: "Yankuba Minteh",
+    teamEn: "Brighton",
     league: "epl",
     leagueLabel: "EPL",
     team: "브라이튼",
@@ -182,6 +214,8 @@ const INJURIES = [
   },
   {
     id: "epl-brighton-baleba",
+    photoQuery: "Carlos Baleba",
+    teamEn: "Brighton",
     league: "epl",
     leagueLabel: "EPL",
     team: "브라이튼",
@@ -193,6 +227,7 @@ const INJURIES = [
   },
   {
     id: "bundesliga-muslija-acl",
+    photoQuery: "Florent Muslija",
     league: "bundesliga",
     leagueLabel: "분데스리가",
     team: "소속팀 확인 중",
@@ -204,6 +239,8 @@ const INJURIES = [
   },
   {
     id: "epl-astonvilla-gomes-madjo",
+    photoQuery: "Joao Gomes",
+    teamEn: "Aston Villa",
     league: "epl",
     leagueLabel: "EPL",
     team: "애스턴 빌라",
@@ -215,6 +252,8 @@ const INJURIES = [
   },
   {
     id: "mlb-story-hernia",
+    photoQuery: "Trevor Story",
+    teamEn: "Boston Red Sox",
     league: "mlb",
     leagueLabel: "MLB",
     team: "보스턴 레드삭스",
