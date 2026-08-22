@@ -40,6 +40,7 @@ export default function ScoreboardSection({ initialDate, initialData }: Props) {
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
   const [groupingMode, setGroupingMode] = useState<GroupingMode>("league");
   const [activeLeagueId, setActiveLeagueId] = useState("all");
+  const [activeTeamId, setActiveTeamId] = useState<string | null>(null);
   const [autoRefresh, setAutoRefresh] = useState(true);
   const [favoriteIds, setFavoriteIds] = useState<Set<string>>(new Set());
   const [loadingDate, setLoadingDate] = useState<string | null>(null);
@@ -86,6 +87,17 @@ export default function ScoreboardSection({ initialDate, initialData }: Props) {
   const [resetKey, setResetKey] = useState(sportDateKey);
   if (resetKey !== sportDateKey) {
     setResetKey(sportDateKey);
+    setActiveLeagueId("all");
+    setActiveTeamId(null);
+  }
+
+  function handleSelectLeague(leagueId: string) {
+    setActiveLeagueId(leagueId);
+    setActiveTeamId(null);
+  }
+
+  function handleTeamClick(teamId: string) {
+    setActiveTeamId((prev) => (prev === teamId ? null : teamId));
     setActiveLeagueId("all");
   }
 
@@ -143,6 +155,17 @@ export default function ScoreboardSection({ initialDate, initialData }: Props) {
       ) : (
         <div className={styles.layout}>
           <div className={styles.main}>
+            {activeTeamId && (
+              <div className={styles.teamFilterChip}>
+                {(activeMatches.find((m) => m.home.id === activeTeamId)?.home.name ??
+                  activeMatches.find((m) => m.away.id === activeTeamId)?.away.name) ||
+                  "선택한 팀"}{" "}
+                경기만 보기
+                <button type="button" onClick={() => setActiveTeamId(null)} aria-label="팀 필터 해제">
+                  ✕
+                </button>
+              </div>
+            )}
             <StatusFilterRow
               matches={activeMatches}
               statusFilter={statusFilter}
@@ -151,17 +174,19 @@ export default function ScoreboardSection({ initialDate, initialData }: Props) {
               onGroupingModeChange={setGroupingMode}
             />
             <div className={styles.body}>
-              <LeagueSidebar matches={activeMatches} activeLeagueId={activeLeagueId} onSelect={setActiveLeagueId} />
+              <LeagueSidebar matches={activeMatches} activeLeagueId={activeLeagueId} onSelect={handleSelectLeague} />
               <MatchList
                 matches={activeMatches}
                 statusFilter={statusFilter}
                 groupingMode={groupingMode}
                 activeLeagueId={activeLeagueId}
+                activeTeamId={activeTeamId}
                 activeDate={activeDate}
                 loading={loadingDate === activeDate}
                 notConfigured={activeSport === "soccer" && soccerResponse?.ok === false && soccerResponse.reason === "not_configured"}
                 favoriteIds={favoriteIds}
                 onToggleFavorite={toggleFavorite}
+                onTeamClick={handleTeamClick}
               />
             </div>
           </div>

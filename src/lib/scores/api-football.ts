@@ -1,7 +1,8 @@
 import { unstable_cache } from "next/cache";
 import type { League, Match, MatchStatus, ScoresResponse } from "@/lib/types";
-import { POPULAR_SOCCER_LEAGUE_NAMES } from "@/lib/scores/leagues";
+import { POPULAR_SOCCER_LEAGUES } from "@/lib/scores/leagues";
 import { toKoreanTeamName } from "@/lib/scores/team-names-ko";
+import { computeLeagueTier, toKoreanCountry, toKoreanLeagueName } from "@/lib/scores/league-names-ko";
 
 const API_HOST = "https://v3.football.api-sports.io";
 
@@ -62,14 +63,16 @@ function statusTextOf(short: string, status: MatchStatus, elapsed: number | null
 
 function toMatch(fx: ApiFootballFixture): Match {
   const status = STATUS_MAP[fx.fixture.status.short] ?? "scheduled";
+  const popular = POPULAR_SOCCER_LEAGUES.has(`${fx.league.country}|${fx.league.name}`);
   const league: League = {
     id: `af-${fx.league.id}`,
     sportId: "soccer",
-    name: fx.league.name,
-    country: fx.league.country,
+    name: toKoreanLeagueName(fx.league.country, fx.league.name),
+    country: toKoreanCountry(fx.league.country),
     countryFlag: fx.league.flag ?? undefined,
     logo: fx.league.logo,
-    popular: POPULAR_SOCCER_LEAGUE_NAMES.has(fx.league.name),
+    popular,
+    tier: computeLeagueTier(fx.league.country, fx.league.name, popular),
   };
   return {
     id: `af-${fx.fixture.id}`,

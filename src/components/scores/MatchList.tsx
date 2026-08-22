@@ -12,11 +12,13 @@ interface Props {
   statusFilter: StatusFilter;
   groupingMode: GroupingMode;
   activeLeagueId: string;
+  activeTeamId: string | null;
   activeDate: string;
   loading: boolean;
   notConfigured: boolean;
   favoriteIds: Set<string>;
   onToggleFavorite: (id: string) => void;
+  onTeamClick: (teamId: string) => void;
 }
 
 function matchesStatusFilter(m: Match, filter: StatusFilter): boolean {
@@ -40,7 +42,8 @@ function groupByLeague(matches: Match[]): LeagueGroup[] {
   return Array.from(map.values())
     .map((g) => ({ ...g, matches: g.matches.slice().sort((a, b) => (a.kickoffAt ?? "").localeCompare(b.kickoffAt ?? "")) }))
     .sort((a, b) => {
-      if (!!a.league.popular !== !!b.league.popular) return a.league.popular ? -1 : 1;
+      const tierDiff = (a.league.tier ?? 1) - (b.league.tier ?? 1);
+      if (tierDiff !== 0) return tierDiff;
       return b.matches.length - a.matches.length;
     });
 }
@@ -50,17 +53,20 @@ export default function MatchList({
   statusFilter,
   groupingMode,
   activeLeagueId,
+  activeTeamId,
   activeDate,
   loading,
   notConfigured,
   favoriteIds,
   onToggleFavorite,
+  onTeamClick,
 }: Props) {
   const filtered = useMemo(() => {
     return matches
       .filter((m) => activeLeagueId === "all" || m.league.id === activeLeagueId)
+      .filter((m) => !activeTeamId || m.home.id === activeTeamId || m.away.id === activeTeamId)
       .filter((m) => matchesStatusFilter(m, statusFilter));
-  }, [matches, activeLeagueId, statusFilter]);
+  }, [matches, activeLeagueId, activeTeamId, statusFilter]);
 
   const liveMatches = useMemo(() => filtered.filter((m) => m.status === "live"), [filtered]);
   const rest = useMemo(() => filtered.filter((m) => m.status !== "live"), [filtered]);
@@ -96,9 +102,11 @@ export default function MatchList({
               <MatchRow
                 key={m.id}
                 match={m}
-                showLeagueInline={groupingMode === "time"}
+                showLeagueInline
                 isFavorite={favoriteIds.has(m.id)}
                 onToggleFavorite={onToggleFavorite}
+                onTeamClick={onTeamClick}
+                activeTeamId={activeTeamId}
               />
             ))}
           </div>
@@ -121,7 +129,14 @@ export default function MatchList({
                     <span className={styles.rankLink}>순위 →</span>
                   </div>
                   {g.matches.map((m) => (
-                    <MatchRow key={m.id} match={m} isFavorite={favoriteIds.has(m.id)} onToggleFavorite={onToggleFavorite} />
+                    <MatchRow
+                      key={m.id}
+                      match={m}
+                      isFavorite={favoriteIds.has(m.id)}
+                      onToggleFavorite={onToggleFavorite}
+                      onTeamClick={onTeamClick}
+                      activeTeamId={activeTeamId}
+                    />
                   ))}
                 </div>
               ))
@@ -134,6 +149,8 @@ export default function MatchList({
                       showLeagueInline
                       isFavorite={favoriteIds.has(m.id)}
                       onToggleFavorite={onToggleFavorite}
+                      onTeamClick={onTeamClick}
+                      activeTeamId={activeTeamId}
                     />
                   ))}
                 </div>

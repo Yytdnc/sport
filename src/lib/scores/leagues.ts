@@ -20,15 +20,17 @@ export const THESPORTSDB_LEAGUES: TheSportsDbLeague[] = [
   { id: "vb-belgium", apiId: 5617, label: "벨기에 프로배구", sportId: "volleyball", country: "벨기에" },
 ];
 
-/** League names (as returned by API-Football) surfaced under "인기 리그" in the sidebar. */
-export const POPULAR_SOCCER_LEAGUE_NAMES = new Set([
-  "Premier League",
-  "La Liga",
-  "Serie A",
-  "Bundesliga",
-  "Ligue 1",
-  "K League 1",
-  "J1 League",
-  "UEFA Champions League",
-  "UEFA Europa League",
+/**
+ * "Country|League name" pairs (raw API-Football strings) surfaced under
+ * "인기 리그" in the sidebar. Keyed by country too because some of these
+ * league-name strings aren't unique (e.g. "Serie A" is also Brazil's name,
+ * "Premier League" is used by ~10 countries) — a bare name match would
+ * wrongly flag all of them as popular.
+ */
+export const POPULAR_SOCCER_LEAGUES = new Set([
+  "England|Premier League",
+  "Spain|La Liga",
+  "Italy|Serie A",
+  "France|Ligue 1",
+  "South-Korea|K League 1",
 ]);

@@ -27,6 +27,9 @@ export interface League {
   countryFlag?: string;
   logo?: string | null;
   popular?: boolean;
+  /** Lower is more prominent. 0 = explicitly popular, 1 = presumed top flight,
+   * 2 = second tier, 3 = third/fourth+ tier, 4 = youth/reserve/women/amateur/regional. */
+  tier?: number;
 }
 
 export interface MatchStats {

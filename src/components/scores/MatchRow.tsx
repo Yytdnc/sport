@@ -9,6 +9,8 @@ interface Props {
   showLeagueInline?: boolean;
   isFavorite: boolean;
   onToggleFavorite: (id: string) => void;
+  onTeamClick: (teamId: string) => void;
+  activeTeamId?: string | null;
 }
 
 function StatBarRow({ label, home, away }: { label: string; home: number; away: number }) {
@@ -29,10 +31,15 @@ function StatBarRow({ label, home, away }: { label: string; home: number; away: 
   );
 }
 
-export default function MatchRow({ match, showLeagueInline, isFavorite, onToggleFavorite }: Props) {
+export default function MatchRow({ match, showLeagueInline, isFavorite, onToggleFavorite, onTeamClick, activeTeamId }: Props) {
   const [expanded, setExpanded] = useState(false);
   const expandable = match.status === "live" || match.status === "finished";
   const score = match.homeScore != null && match.awayScore != null ? `${match.homeScore} : ${match.awayScore}` : "vs";
+
+  function handleTeamClick(e: React.MouseEvent, teamId: string) {
+    e.stopPropagation();
+    onTeamClick(teamId);
+  }
 
   return (
     <div className={`${styles.matchRowWrap} ${match.status === "live" ? styles.live : ""}`}>
@@ -47,7 +54,10 @@ export default function MatchRow({ match, showLeagueInline, isFavorite, onToggle
           {match.status === "live" && <span className="dot" style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--live-color)" }} />}
           {match.statusText}
         </span>
-        <span className={`${styles.teamCell} ${styles.home}`}>
+        <span
+          className={`${styles.teamCell} ${styles.home} ${activeTeamId === match.home.id ? styles.teamActive : ""}`}
+          onClick={(e) => handleTeamClick(e, match.home.id)}
+        >
           <span className={styles.teamName}>{match.home.name}</span>
           {match.home.logo && (
             // eslint-disable-next-line @next/next/no-img-element
@@ -56,7 +66,10 @@ export default function MatchRow({ match, showLeagueInline, isFavorite, onToggle
           {match.home.rank != null && <span className={styles.teamRank}>[{match.home.rank}]</span>}
         </span>
         <span className={styles.scoreCell}>{score}</span>
-        <span className={`${styles.teamCell} ${styles.away}`}>
+        <span
+          className={`${styles.teamCell} ${styles.away} ${activeTeamId === match.away.id ? styles.teamActive : ""}`}
+          onClick={(e) => handleTeamClick(e, match.away.id)}
+        >
           {match.away.logo && (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={match.away.logo} alt="" />

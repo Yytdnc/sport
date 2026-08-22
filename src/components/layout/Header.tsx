@@ -19,7 +19,9 @@ export default function Header() {
           <Link className={pathname === "/" ? "active" : ""} href="/">
             홈
           </Link>
-          <Link href="/#injuries">부상자 정보</Link>
+          <Link className={pathname === "/injuries" ? "active" : ""} href="/injuries">
+            부상자 정보
+          </Link>
         </nav>
       </div>
       <div className={`auth-area ${session ? "logged-in" : ""}`}>

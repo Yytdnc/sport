@@ -16,6 +16,7 @@ interface TsdbEvent {
   strTimestamp: string | null;
   strVenue: string | null;
   strStatus: string | null;
+  strLeagueBadge: string | null;
 }
 
 async function fetchEvents(url: string): Promise<TsdbEvent[]> {
@@ -66,6 +67,7 @@ function toMatch(ev: TsdbEvent, league: TheSportsDbLeague): Match {
     sportId: league.sportId,
     name: league.label,
     country: league.country,
+    logo: ev.strLeagueBadge || undefined,
   };
   return {
     id: `tsdb-${ev.idEvent}`,

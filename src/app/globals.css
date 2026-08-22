@@ -450,7 +450,15 @@ input, textarea { font: inherit; }
   padding: 16px 18px;
 }
 .team-injury-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.team-injury-title { display: flex; align-items: center; gap: 8px; }
+.team-injury-badge { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; }
 .team-injury-name { font-weight: 800; font-size: 1rem; margin-right: 8px; }
+.team-injury-next {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  font-family: var(--font-mono);
+}
 .team-injury-count {
   font-family: var(--font-mono);
   font-weight: 700;

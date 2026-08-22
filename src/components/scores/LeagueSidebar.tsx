@@ -23,8 +23,11 @@ export default function LeagueSidebar({ matches, activeLeagueId, onSelect }: Pro
       if (existing) existing.count += 1;
       else map.set(m.league.id, { league: m.league, count: 1 });
     });
+    const byTierThenCount = (a: LeagueCount, b: LeagueCount) =>
+      (a.league.tier ?? 1) - (b.league.tier ?? 1) || b.count - a.count;
+
     const all = Array.from(map.values());
-    const popular = all.filter((l) => l.league.popular).sort((a, b) => b.count - a.count);
+    const popular = all.filter((l) => l.league.popular).sort(byTierThenCount);
 
     const countryMap = new Map<string, LeagueCount[]>();
     all.forEach((l) => {
@@ -36,7 +39,8 @@ export default function LeagueSidebar({ matches, activeLeagueId, onSelect }: Pro
     const byCountry = Array.from(countryMap.entries())
       .map(([country, leagues]) => ({
         country,
-        leagues: leagues.sort((a, b) => b.count - a.count),
+        flag: leagues.find((l) => l.league.countryFlag)?.league.countryFlag,
+        leagues: leagues.sort(byTierThenCount),
         total: leagues.reduce((sum, l) => sum + l.count, 0),
       }))
       .sort((a, b) => b.total - a.total);
@@ -65,6 +69,10 @@ export default function LeagueSidebar({ matches, activeLeagueId, onSelect }: Pro
               className={`${styles.sidebarItem} ${activeLeagueId === league.id ? styles.active : ""}`}
               onClick={() => onSelect(league.id)}
             >
+              {league.logo && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img className={styles.sidebarFlag} src={league.logo} alt="" />
+              )}
               {league.name}
               <span className={styles.badge}>{count}</span>
             </button>
@@ -72,9 +80,13 @@ export default function LeagueSidebar({ matches, activeLeagueId, onSelect }: Pro
         </>
       )}
 
-      {byCountry.map(({ country, leagues, total: countryTotal }) => (
+      {byCountry.map(({ country, flag, leagues, total: countryTotal }) => (
         <div key={country}>
           <div className={styles.sidebarGroupLabel}>
+            {flag && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img className={styles.sidebarFlag} src={flag} alt="" />
+            )}
             {country} · {countryTotal}
           </div>
           {leagues.map(({ league, count }) => (
@@ -84,6 +96,10 @@ export default function LeagueSidebar({ matches, activeLeagueId, onSelect }: Pro
               className={`${styles.sidebarItem} ${activeLeagueId === league.id ? styles.active : ""}`}
               onClick={() => onSelect(league.id)}
             >
+              {league.logo && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img className={styles.sidebarFlag} src={league.logo} alt="" />
+              )}
               {league.name}
               <span className={styles.badge}>{count}</span>
             </button>

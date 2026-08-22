@@ -2,16 +2,18 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { INJURIES, INJURY_LEAGUES, INJURY_STATUS_LABEL, type InjuryItem, type InjuryStatus } from "@/lib/injuries";
+import { toKoreanTeamName } from "@/lib/scores/team-names-ko";
 
 const API_BASE = "https://www.thesportsdb.com/api/v1/json/3";
 const PHOTO_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
+const TEAM_INFO_CACHE_TTL_MS = 6 * 60 * 60 * 1000;
 
-function cacheGet(key: string): string | null | undefined {
+function cacheGet(key: string, ttlMs = PHOTO_CACHE_TTL_MS): string | null | undefined {
   try {
     const raw = sessionStorage.getItem(key);
     if (!raw) return undefined;
     const { at, data } = JSON.parse(raw) as { at: number; data: string | null };
-    if (Date.now() - at > PHOTO_CACHE_TTL_MS) return undefined;
+    if (Date.now() - at > ttlMs) return undefined;
     return data;
   } catch {
     return undefined;
@@ -30,6 +32,64 @@ interface PlayerSearchResult {
   strTeam?: string;
   strCutout?: string;
   strThumb?: string;
+}
+
+interface TeamSearchResult {
+  idTeam?: string;
+  strTeamBadge?: string;
+}
+
+interface NextEventResult {
+  dateEvent?: string;
+  strHomeTeam?: string;
+  strAwayTeam?: string;
+}
+
+interface TeamInfo {
+  badge: string | null;
+  next: { opponent: string; date: string; isHome: boolean } | null;
+}
+
+function formatMatchDate(dateStr: string): string {
+  const d = new Date(`${dateStr}T00:00:00Z`);
+  return `${d.getUTCMonth() + 1}월 ${d.getUTCDate()}일`;
+}
+
+async function fetchTeamInfo(teamEn: string): Promise<TeamInfo> {
+  const cacheKey = `sp_teaminfo_${teamEn}`;
+  const cached = cacheGet(cacheKey, TEAM_INFO_CACHE_TTL_MS);
+  if (cached != null) return JSON.parse(cached) as TeamInfo;
+
+  const empty: TeamInfo = { badge: null, next: null };
+  try {
+    const searchRes = await fetch(`${API_BASE}/searchteams.php?t=${encodeURIComponent(teamEn)}`);
+    if (!searchRes.ok) throw new Error("bad response");
+    const searchData = (await searchRes.json()) as { teams?: TeamSearchResult[] | null };
+    const team = searchData.teams?.[0];
+    if (!team?.idTeam) {
+      cacheSet(cacheKey, JSON.stringify(empty));
+      return empty;
+    }
+
+    const badge = team.strTeamBadge || null;
+    let next: TeamInfo["next"] = null;
+    const nextRes = await fetch(`${API_BASE}/eventsnext.php?id=${team.idTeam}`);
+    if (nextRes.ok) {
+      const nextData = (await nextRes.json()) as { events?: NextEventResult[] | null };
+      const event = nextData.events?.[0];
+      if (event?.dateEvent && event.strHomeTeam && event.strAwayTeam) {
+        const isHome = event.strHomeTeam.toLowerCase().includes(teamEn.toLowerCase());
+        const opponentEn = isHome ? event.strAwayTeam : event.strHomeTeam;
+        next = { opponent: toKoreanTeamName(opponentEn), date: event.dateEvent, isHome };
+      }
+    }
+
+    const info: TeamInfo = { badge, next };
+    cacheSet(cacheKey, JSON.stringify(info));
+    return info;
+  } catch {
+    return empty;
+  }
 }
 
 async function fetchPlayerPhoto(item: InjuryItem): Promise<string | null> {
@@ -69,6 +129,7 @@ function shortReason(headline: string): string {
 
 interface TeamGroup {
   team: string;
+  teamEn?: string;
   leagueLabel: string;
   items: InjuryItem[];
   outCount: number;
@@ -95,6 +156,7 @@ function groupByTeam(items: InjuryItem[]): TeamGroup[] {
         .sort((a, b) => SEVERITY_RANK[a.status] - SEVERITY_RANK[b.status] || b.updated.localeCompare(a.updated))[0];
       return {
         team,
+        teamEn: teamItems.find((i) => i.teamEn)?.teamEn,
         leagueLabel: teamItems[0].leagueLabel,
         items: byUpdatedDesc,
         outCount: teamItems.filter((i) => i.status === "out").length,
@@ -133,22 +195,33 @@ function TeamInjuryCard({
   expanded,
   onToggle,
   photos,
+  teamInfo,
 }: {
   group: TeamGroup;
   expanded: boolean;
   onToggle: () => void;
   photos: Record<string, string | null>;
+  teamInfo: TeamInfo | undefined;
 }) {
   const total = group.items.length;
   return (
     <div className="team-injury-card">
       <div className="team-injury-head">
-        <div>
+        <div className="team-injury-title">
+          {teamInfo?.badge && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img className="team-injury-badge" src={teamInfo.badge} alt="" />
+          )}
           <span className="team-injury-name">{group.team}</span>
           <span className="injury-league-badge">{group.leagueLabel}</span>
         </div>
         <span className="team-injury-count">{total}명</span>
       </div>
+      {teamInfo?.next && (
+        <div className="team-injury-next">
+          다음 경기: {teamInfo.next.isHome ? "vs" : "@"} {teamInfo.next.opponent} · {formatMatchDate(teamInfo.next.date)}
+        </div>
+      )}
       <div className="team-injury-dots">
         {group.outCount > 0 && (
           <span className="dot-badge out">
@@ -187,6 +260,7 @@ function TeamInjuryCard({
 export default function InjurySection() {
   const [activeLeague, setActiveLeague] = useState("all");
   const [photos, setPhotos] = useState<Record<string, string | null>>({});
+  const [teamInfoMap, setTeamInfoMap] = useState<Record<string, TeamInfo>>({});
   const [expandedTeams, setExpandedTeams] = useState<Set<string>>(new Set());
 
   const list = useMemo(
@@ -209,6 +283,20 @@ export default function InjurySection() {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [list]);
+
+  useEffect(() => {
+    let cancelled = false;
+    teamGroups.forEach((group) => {
+      if (!group.teamEn || group.team in teamInfoMap) return;
+      fetchTeamInfo(group.teamEn).then((info) => {
+        if (!cancelled) setTeamInfoMap((prev) => ({ ...prev, [group.team]: info }));
+      });
+    });
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [teamGroups]);
 
   const latestUpdated = useMemo(() => INJURIES.reduce((max, i) => (i.updated > max ? i.updated : max), ""), []);
 
@@ -274,6 +362,7 @@ export default function InjurySection() {
             expanded={expandedTeams.has(group.team)}
             onToggle={() => toggleTeam(group.team)}
             photos={photos}
+            teamInfo={teamInfoMap[group.team]}
           />
         ))}
       </div>

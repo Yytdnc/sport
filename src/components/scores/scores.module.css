@@ -136,6 +136,28 @@
 .dateCell.active { background: var(--accent); border-color: var(--accent); }
 .dateCell.active .weekday, .dateCell.active .day { color: var(--on-accent); }
 
+.teamFilterChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 4px 0 0;
+}
+.teamFilterChip button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0;
+}
+
 /* Status filter row */
 .statusRow {
   display: flex;
@@ -229,6 +251,9 @@
   color: var(--text-soft);
 }
 .sidebarGroupLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   padding: 10px 12px 4px;
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -316,7 +341,9 @@
 }
 .timeCell .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--live-color); flex-shrink: 0; }
 .live .timeCell { color: var(--live-color); }
-.teamCell { display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 0.88rem; overflow: hidden; }
+.teamCell { display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 0.88rem; overflow: hidden; cursor: pointer; }
+.teamCell:hover { color: var(--accent); }
+.teamCell.teamActive { color: var(--accent); }
 .teamCell img { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
 .teamCell.home { justify-content: flex-end; text-align: right; }
 .teamCell.away { justify-content: flex-start; text-align: left; }
