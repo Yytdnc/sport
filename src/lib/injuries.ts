@@ -488,6 +488,48 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "쾰른에서 마인츠로 이적한 에리크 마르텔이 두바이 샤바브 알 아흘리와의 연습경기 도중 오른쪽 무릎 내측 인대를 다쳤어요. 정확한 결장 기간은 회복 경과에 따라 정해질 예정이라, 분데스리가 개막을 앞두고 중원 운용에 변수가 생겼어요.",
   },
+  {
+    id: "mlb-cardinals-pallante-elbow",
+    photoQuery: "Andre Pallante",
+    teamEn: "St. Louis Cardinals",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "세인트루이스 카디널스",
+    player: "안드레 팔란테",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "팔란테, 팔꿈치 염증으로 15일 부상자 명단… 매슈스가 로테이션 대체",
+    summary:
+      "카디널스가 안드레 팔란테를 팔꿈치 염증을 이유로 8월 18일자로 소급 적용된 15일 부상자 명단에 올렸어요. 라이언 페르난데스가 대신 콜업됐고, 팔란테의 로테이션 자리는 퀸 매슈스가 이어받아 이번 주말 선발 등판할 예정이에요.",
+  },
+  {
+    id: "epl-newcastle-miley-schar-elanga-hall",
+    photoQuery: "Lewis Miley",
+    teamEn: "Newcastle United",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "뉴캐슬 유나이티드",
+    player: "밀리 · 셰어 · 엘랑가 · 홀",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "뉴캐슬, 리버풀전 앞두고 결장자 명단 5명으로 늘어나",
+    summary:
+      "마티아스 야이슬레 감독이 8월 23일 리버풀과의 개막전을 앞두고 루이스 밀리, 파비안 셰어, 안토니 엘랑가, 루이스 홀까지 부상으로 결장한다고 밝혔어요. 이미 결장이 확정된 조엘린턴까지 더해 뉴캐슬의 결장자는 총 5명으로 늘어났어요.",
+  },
+  {
+    id: "epl-liverpool-ekitike-bradley-leoni-gomez",
+    photoQuery: "Hugo Ekitike",
+    teamEn: "Liverpool",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "리버풀",
+    player: "에키티케 · 브래들리 · 레오니 · 고메즈",
+    status: "out",
+    updated: "2026-08-22",
+    headline: "리버풀, 개막전 뉴캐슬 원정에 에키티케 등 4명 없이 나서",
+    summary:
+      "리버풀이 8월 23일 뉴캐슬 원정 개막전에 우고 에키티케, 코너 브래들리, 조반니 레오니, 조 고메즈 없이 나서요. 커티스 존스와 프레디 우드먼도 컨디션에 따라 출전이 불투명한 상태예요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
