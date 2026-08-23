@@ -852,6 +852,34 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "다저스 외야수 앤디 페이지스가 8월 21일 피츠버그전에서 시속 100마일 강속구에 왼손을 맞아 골절 판정을 받았어요. 데이브 로버츠 감독은 대략 4~5주 결장을 예상한다고 밝혔고, 수술 가능성도 열어뒀지만 복귀 시점에는 큰 영향이 없을 것으로 봤어요.",
   },
+  {
+    id: "epl-crystalpalace-riad-knee",
+    photoQuery: "Chadi Riad",
+    teamEn: "Crystal Palace",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "크리스탈 팰리스",
+    player: "차디 리아드",
+    status: "out",
+    updated: "2026-08-23",
+    headline: "리아드, 에버턴전서 왼쪽 무릎 부상… 십자인대 손상 우려",
+    summary:
+      "크리스탈 팰리스 수비수 차디 리아드가 프리미어리그 개막전인 에버턴 원정에서 왼쪽 무릎을 다쳐 눈물을 흘리며 들것에 실려 나갔어요. 십자인대 손상 가능성이 제기되고 있으며, 과거에도 같은 무릎으로 긴 공백을 겪었던 만큼 정밀 검진 결과가 주목돼요.",
+  },
+  {
+    id: "ligue1-angers-mouton-return",
+    photoQuery: "Louis Mouton",
+    teamEn: "Angers",
+    league: "ligue1",
+    leagueLabel: "리그앙",
+    team: "앙제",
+    player: "루이 무통",
+    status: "ok",
+    updated: "2026-08-23",
+    headline: "무통, 반월판 수술 3개월 만에 팀 훈련 복귀",
+    summary:
+      "왼쪽 무릎 외측 반월판 수술을 받았던 루이 무통이 8월 20일 릴전을 앞두고 앙제 팀 훈련에 복귀했어요. 수술 후 약 3개월 만의 전체 훈련 합류로, 실전 복귀도 머지않았다는 기대가 나오고 있어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
