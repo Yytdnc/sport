@@ -922,6 +922,34 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "슈투트가르트 수비수 단-악셀 자가두가 에버턴과의 프리시즌 친선경기 도중 오른쪽 허벅지 뒤쪽 근육을 다쳤어요. 구단은 8월 11일 그가 앞으로 몇 주간 훈련과 경기에 나서지 못할 것이라고 밝혔고, 복귀는 9월 말 이후로 예상돼요. 잦은 근육 부상에 시달려온 자가두에게는 또 한 번의 아쉬운 이탈이에요.",
   },
+  {
+    id: "epl-brentford-adli-calf",
+    photoQuery: "Amine Adli",
+    teamEn: "Brentford",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "브렌트포드",
+    player: "아민 아들리",
+    status: "out",
+    updated: "2026-08-23",
+    headline: "브렌트포드 아들리, 프리시즌 친선전서 종아리 부상… 몇 주간 결장 전망",
+    summary:
+      "브렌트포드 윙어 아민 아들리가 레알 베티스와의 프리시즌 친선경기 도중 종아리를 다쳐 그라운드를 떠났어요. 구단은 그의 결장이 몇 주간 이어질 것으로 보고 있어, 시즌 초반 공격 자원 운용에 부담이 생겼어요.",
+  },
+  {
+    id: "bundesliga-unionberlin-ronnow-adductor",
+    photoQuery: "Frederik Ronnow",
+    teamEn: "Union Berlin",
+    league: "bundesliga",
+    leagueLabel: "분데스리가",
+    team: "우니온 베를린",
+    player: "프레데리크 뢰노우",
+    status: "out",
+    updated: "2026-08-23",
+    headline: "우니온 베를린 주전 GK 뢰노우, 내전근 부상 여파로 포칼 개막전 결장",
+    summary:
+      "우니온 베를린의 주전 골키퍼 프레데리크 뢰노우가 내전근 부상 여파에서 완전히 회복하지 못해 아인트라흐트 브라운슈바이크와의 DFB-포칼 1라운드에 나서지 못해요. 프리시즌 내내 컨디션을 100% 끌어올리지 못한 상태라, 팀은 복귀를 서두르지 않고 있어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
