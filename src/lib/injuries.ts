@@ -1062,6 +1062,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "지난 5월 오른발 다섯 번째 중족골 골절로 수술을 받았던 페르민 로페스가 회복 속도를 앞당기며 정상적으로 훈련을 소화하고 있어요. 구단은 그가 라리가 개막전인 엘체전에 맞춰 그라운드에 복귀할 수 있을 것으로 기대하고 있어요.",
   },
+  {
+    id: "mlb-diamondbacks-burnes-return",
+    photoQuery: "Corbin Burnes",
+    teamEn: "Arizona Diamondbacks",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "애리조나 다이아몬드백스",
+    player: "코빈 번즈",
+    status: "doubtful",
+    updated: "2026-08-23",
+    headline: "번즈, 첫 라이브 배팅 훈련 소화… 9월 초 복귀 목표",
+    summary:
+      "토미존 수술 재활 중이던 코빈 번즈가 지난 6월 어깨 원형근(테레스 메이저) 부상까지 겹치며 복귀가 늦어졌지만, 8월 22일 처음으로 실전 타자를 상대로 20구 라이브 배팅 훈련을 소화했어요. 이어지는 화요일에는 두 이닝 35구 규모의 브리지 게임이 예정돼 있고, 구단은 9월 초 이후 실전 등판을 목표로 신중하게 단계를 밟아가고 있어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
