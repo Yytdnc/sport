@@ -1048,6 +1048,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "브루어스 필승조 애브너 우리베가 8월 8~9일 트윈스전에서 이틀 연속 많은 투구 이닝을 소화한 뒤 팔 상태가 좋지 않아 정밀 검사를 받았고, 전완근 긴장 진단에 따라 8월 11일자로 소급 적용된 15일 부상자 명단에 올랐어요. 8월 18일 15구 불펜 피칭을 무리 없이 마치며 최소 이탈 기간에 맞춘 8월 26일 메츠전 복귀 가능성이 커졌어요.",
   },
+  {
+    id: "laliga-barcelona-fermin-lopez",
+    photoQuery: "Fermin Lopez",
+    teamEn: "FC Barcelona",
+    league: "laliga",
+    leagueLabel: "라리가",
+    team: "FC 바르셀로나",
+    player: "페르민 로페스",
+    status: "questionable",
+    updated: "2026-08-23",
+    headline: "페르민 로페스, 발 골절 딛고 엘체전 복귀 유력",
+    summary:
+      "지난 5월 오른발 다섯 번째 중족골 골절로 수술을 받았던 페르민 로페스가 회복 속도를 앞당기며 정상적으로 훈련을 소화하고 있어요. 구단은 그가 라리가 개막전인 엘체전에 맞춰 그라운드에 복귀할 수 있을 것으로 기대하고 있어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
