@@ -92,10 +92,10 @@ export const INJURIES: InjuryItem[] = [
     team: "캔자스시티 로열스",
     player: "마이켈 가르시아",
     status: "out",
-    updated: "2026-08-20",
-    headline: "가르시아, 햄스트링 부상으로 IL 등재 예정",
+    updated: "2026-08-23",
+    headline: "가르시아, 햄스트링 부상으로 10일 IL 확정… 루고 콜업",
     summary:
-      "쿼트라로 감독이 마이켈 가르시아가 햄스트링 부상으로 부상자 명단에 오를 예정이라고 밝혔어요. 정확한 결장 기간은 추가 검진 후 나올 전망이에요.",
+      "지난 20일 애슬레틱스전에서 햄스트링을 다쳤던 마이켈 가르시아가 21일 10일 부상자 명단에 올랐어요. 손 부상으로 46경기를 결장한 뒤 복귀한 지 나흘 만에 다시 이탈하게 됐으며, 이번 시즌 두 번째 IL행이에요. 빈자리는 매튜 루고가 콜업돼 데뷔전을 치를 예정이에요.",
   },
   {
     id: "epl-arsenal-saliba-timber",
@@ -907,6 +907,20 @@ export const INJURIES: InjuryItem[] = [
     headline: "무통, 반월판 수술 3개월 만에 팀 훈련 복귀",
     summary:
       "왼쪽 무릎 외측 반월판 수술을 받았던 루이 무통이 8월 20일 릴전을 앞두고 앙제 팀 훈련에 복귀했어요. 수술 후 약 3개월 만의 전체 훈련 합류로, 실전 복귀도 머지않았다는 기대가 나오고 있어요.",
+  },
+  {
+    id: "bundesliga-stuttgart-zagadou-thigh",
+    photoQuery: "Dan-Axel Zagadou",
+    teamEn: "VfB Stuttgart",
+    league: "bundesliga",
+    leagueLabel: "분데스리가",
+    team: "VfB 슈투트가르트",
+    player: "단-악셀 자가두",
+    status: "out",
+    updated: "2026-08-23",
+    headline: "슈투트가르트 자가두, 프리시즌 친선전서 허벅지 부상… 9월 말까지 결장 전망",
+    summary:
+      "슈투트가르트 수비수 단-악셀 자가두가 에버턴과의 프리시즌 친선경기 도중 오른쪽 허벅지 뒤쪽 근육을 다쳤어요. 구단은 8월 11일 그가 앞으로 몇 주간 훈련과 경기에 나서지 못할 것이라고 밝혔고, 복귀는 9월 말 이후로 예상돼요. 잦은 근육 부상에 시달려온 자가두에게는 또 한 번의 아쉬운 이탈이에요.",
   },
 ];
 
