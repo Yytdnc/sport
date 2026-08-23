@@ -950,6 +950,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "우니온 베를린의 주전 골키퍼 프레데리크 뢰노우가 내전근 부상 여파에서 완전히 회복하지 못해 아인트라흐트 브라운슈바이크와의 DFB-포칼 1라운드에 나서지 못해요. 프리시즌 내내 컨디션을 100% 끌어올리지 못한 상태라, 팀은 복귀를 서두르지 않고 있어요.",
   },
+  {
+    id: "mlb-brewers-uribe-forearm",
+    photoQuery: "Abner Uribe",
+    teamEn: "Milwaukee Brewers",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "밀워키 브루어스",
+    player: "애브너 우리베",
+    status: "doubtful",
+    updated: "2026-08-23",
+    headline: "우리베, 오른쪽 전완근 긴장으로 15일 IL… 8월 26일 복귀 자격 획득",
+    summary:
+      "브루어스 필승조 애브너 우리베가 8월 8~9일 트윈스전에서 이틀 연속 많은 투구 이닝을 소화한 뒤 팔 상태가 좋지 않아 정밀 검사를 받았고, 전완근 긴장 진단에 따라 8월 11일자로 소급 적용된 15일 부상자 명단에 올랐어요. 8월 18일 15구 불펜 피칭을 무리 없이 마치며 최소 이탈 기간에 맞춘 8월 26일 메츠전 복귀 가능성이 커졌어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
