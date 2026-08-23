@@ -1090,6 +1090,48 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "아산 우에드라오고가 오스트리아 잘펠덴 여름 훈련 캠프에서 오른쪽 어깨 관절낭 부상을 당했어요. 정밀 검사 결과 수술 없이 보존적 치료로 회복하기로 결정됐지만 몇 주간 결장이 불가피해, 데미첼리스 감독 부임 후 첫 시즌 개막전 출전 여부도 아직 불투명한 상황이에요.",
   },
+  {
+    id: "mlb-angels-kikuchi-return",
+    photoQuery: "Yusei Kikuchi",
+    teamEn: "Los Angeles Angels",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "로스앤젤레스 에인절스",
+    player: "유세이 기쿠치",
+    status: "ok",
+    updated: "2026-08-23",
+    headline: "기쿠치, 어깨 염증 딛고 60일 부상자 명단서 활성화… 레인저스전 로테이션 복귀",
+    summary:
+      "왼쪽 어깨 염증으로 4월 말부터 이탈해 5월 22일 60일 부상자 명단에 올랐던 기쿠치가 여러 차례 마이너리그 재활 등판을 소화한 끝에 8월 23일 텍사스 레인저스전에 맞춰 명단에서 복귀했어요. 로스터 자리를 만들기 위해 구단은 베테랑 우완 마이클 풀머를 지명할당(DFA) 조치했어요.",
+  },
+  {
+    id: "mlb-tigers-outman-dfa",
+    photoQuery: "James Outman",
+    teamEn: "Detroit Tigers",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "디트로이트 타이거스",
+    player: "제임스 아웃먼",
+    status: "ok",
+    updated: "2026-08-23",
+    headline: "아웃먼, 뇌진탕 딛고 명단 복귀했지만 곧바로 지명할당",
+    summary:
+      "지난 8월 13일 가디언스전에서 몸에 맞는 공에 턱을 맞아 뇌진탕 부상자 명단에 올랐던 아웃먼이 트리플A 톨레도 재활 등판을 마치고 8월 23일 명단에서 활성화됐어요. 다만 타이거스는 로스터 자리를 확보하기 위해 복귀와 동시에 그를 지명할당(DFA) 조치했어요.",
+  },
+  {
+    id: "laliga-atleticomadrid-sorloth-thigh",
+    photoQuery: "Alexander Sorloth",
+    teamEn: "Atletico Madrid",
+    league: "laliga",
+    leagueLabel: "라리가",
+    team: "아틀레티코 마드리드",
+    player: "알렉산더 쇠를로트",
+    status: "out",
+    updated: "2026-08-23",
+    headline: "쇠를로트, 근육 경련 부상으로 시즌 초반 이탈… 별도 훈련 소화",
+    summary:
+      "아틀레티코 마드리드 공격수 알렉산더 쇠를로트가 근육 경련 부상을 당해 팀 훈련과 분리된 개인 재활을 소화하고 있어요. 구단은 그가 시즌 개막 초반 경기들에 나서지 못할 것이라고 밝혔고, 그리즈만 이적과 알마다 방출까지 겹치며 아틀레티코의 최전방 자원난이 더 커졌어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
