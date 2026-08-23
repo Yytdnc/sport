@@ -1132,6 +1132,34 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "아틀레티코 마드리드 공격수 알렉산더 쇠를로트가 근육 경련 부상을 당해 팀 훈련과 분리된 개인 재활을 소화하고 있어요. 구단은 그가 시즌 개막 초반 경기들에 나서지 못할 것이라고 밝혔고, 그리즈만 이적과 알마다 방출까지 겹치며 아틀레티코의 최전방 자원난이 더 커졌어요.",
   },
+  {
+    id: "laliga-barcelona-dejong-knee",
+    photoQuery: "Frenkie de Jong",
+    teamEn: "FC Barcelona",
+    league: "laliga",
+    leagueLabel: "라리가",
+    team: "바르셀로나",
+    player: "프렌키 더 용",
+    status: "out",
+    updated: "2026-08-23",
+    headline: "더 용, 무릎 내측인대 파열 확인… 수술 시 최대 넉 달 결장 우려",
+    summary:
+      "바르셀로나가 프렌키 더 용의 오른쪽 무릎 정밀 검사에서 내측 측부인대(MCL) 파열이 확인됐다고 밝혔어요. 월드컵 기간 통증을 참고 뛰었던 것으로 알려진 더 용은 우선 수술 없이 보존적 치료를 받으며 경과를 지켜볼 예정이지만, 회복이 더딜 경우 수술과 함께 결장 기간이 최대 넉 달까지 길어질 수 있어요.",
+  },
+  {
+    id: "mlb-orioles-bautista-rehab",
+    photoQuery: "Felix Bautista",
+    teamEn: "Baltimore Orioles",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "볼티모어 오리올스",
+    player: "펠릭스 바우티스타",
+    status: "doubtful",
+    updated: "2026-08-23",
+    headline: "바우티스타, 재활 등판으로 복귀 시동… 구위는 아직 다듬는 중",
+    summary:
+      "지난해 회전근개와 관절와순 봉합 수술을 받았던 볼티모어 마무리 펠릭스 바우티스타가 더블A 체서피크에서 부상 후 첫 실전 등판을 치렀어요. 세 개의 볼넷을 내주며 아웃카운트 하나만 잡는 데 그쳤지만 최고 구속은 97마일까지 나왔고, 순조로우면 다음 주 트리플A로 무대를 옮겨 재활 등판을 이어갈 계획이에요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
