@@ -1076,6 +1076,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "토미존 수술 재활 중이던 코빈 번즈가 지난 6월 어깨 원형근(테레스 메이저) 부상까지 겹치며 복귀가 늦어졌지만, 8월 22일 처음으로 실전 타자를 상대로 20구 라이브 배팅 훈련을 소화했어요. 이어지는 화요일에는 두 이닝 35구 규모의 브리지 게임이 예정돼 있고, 구단은 9월 초 이후 실전 등판을 목표로 신중하게 단계를 밟아가고 있어요.",
   },
+  {
+    id: "bundesliga-leipzig-ouedraogo-shoulder",
+    photoQuery: "Assan Ouedraogo",
+    teamEn: "RB Leipzig",
+    league: "bundesliga",
+    leagueLabel: "분데스리가",
+    team: "RB 라이프치히",
+    player: "아산 우에드라오고",
+    status: "out",
+    updated: "2026-08-23",
+    headline: "라이프치히 우에드라오고, 여름 캠프서 어깨 관절낭 부상… 수술 없이 보존적 치료",
+    summary:
+      "아산 우에드라오고가 오스트리아 잘펠덴 여름 훈련 캠프에서 오른쪽 어깨 관절낭 부상을 당했어요. 정밀 검사 결과 수술 없이 보존적 치료로 회복하기로 결정됐지만 몇 주간 결장이 불가피해, 데미첼리스 감독 부임 후 첫 시즌 개막전 출전 여부도 아직 불투명한 상황이에요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
