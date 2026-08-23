@@ -1160,6 +1160,34 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "지난해 회전근개와 관절와순 봉합 수술을 받았던 볼티모어 마무리 펠릭스 바우티스타가 더블A 체서피크에서 부상 후 첫 실전 등판을 치렀어요. 세 개의 볼넷을 내주며 아웃카운트 하나만 잡는 데 그쳤지만 최고 구속은 97마일까지 나왔고, 순조로우면 다음 주 트리플A로 무대를 옮겨 재활 등판을 이어갈 계획이에요.",
   },
+  {
+    id: "mlb-yankees-weathers-forearm",
+    photoQuery: "Ryan Weathers",
+    teamEn: "New York Yankees",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "뉴욕 양키스",
+    player: "라이언 웨더스",
+    status: "out",
+    updated: "2026-08-23",
+    headline: "웨더스, 왼쪽 전완근 긴장으로 15일 부상자 명단",
+    summary:
+      "라이언 웨더스가 토요일 블루제이스전 4회 도중 왼쪽 전완근 불편감을 호소하며 조기 강판됐고, 다음 날인 8월 23일 전완근 긴장 진단과 함께 15일 부상자 명단에 올랐어요. 검사에서 인대(UCL) 손상은 없는 것으로 확인됐지만 에런 분 감독은 2~4주간 캐치볼조차 쉬어야 한다고 밝혔어요. 지난해 말린스 시절에도 비슷한 부상으로 한 달가량 결장했던 본인은 이번 시즌 내 복귀에 조심스러운 기대감을 나타냈어요.",
+  },
+  {
+    id: "mlb-brewers-woodruff-shoulder",
+    photoQuery: "Brandon Woodruff",
+    teamEn: "Milwaukee Brewers",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "밀워키 브루어스",
+    player: "브랜던 우드러프",
+    status: "doubtful",
+    updated: "2026-08-23",
+    headline: "우드러프, 어깨 수술 피해… 8월 26일부터 5주 투구 프로그램 돌입",
+    summary:
+      "밀워키 브랜던 우드러프가 이달 초 받은 정밀 검사에서 오른쪽 어깨가 충분히 회복된 것으로 나타나면서 우려했던 수술을 받지 않기로 했어요. 8월 26일부터 5주에 걸친 단계적 투구 프로그램에 들어갈 예정이며, 팻 머피 감독은 시즌 내 복귀 가능성을 낮게 보면서도 완전히 배제하지는 않는다고 밝혔어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
