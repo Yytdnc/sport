@@ -1230,6 +1230,34 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "위르첼러 감독이 애스턴 빌라와의 개막전을 앞두고 미토마 가오루와 스테파노스 치마스도 뛸 수 없다고 밝혔어요. 미토마는 햄스트링 문제로, 치마스는 무릎 부상으로 아직 실전 컨디션을 끌어올리지 못한 상태예요. 이미 결장이 확정된 발레바·민테까지 더해 브라이튼의 개막전 결장자는 네 명으로 늘었어요.",
   },
+  {
+    id: "epl-astonvilla-garnacho-concussion",
+    photoQuery: "Alejandro Garnacho",
+    teamEn: "Aston Villa",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "애스턴 빌라",
+    player: "알레한드로 가르나초",
+    status: "questionable",
+    updated: "2026-08-24",
+    headline: "가르나초, 뇌진탕 프로토콜 통과… 브라이튼전 출전은 막판 컨디션에 달려",
+    summary:
+      "애스턴 빌라의 알레한드로 가르나초가 지난 8월 5일 프리시즌 친선경기 도중 충돌로 뇌진탕 증세를 겪은 뒤 실전에 나서지 못하고 있었어요. 최근 뇌진탕 프로토콜을 통과했다는 보도가 나왔지만, 우나이 에메리 감독은 신중한 태도를 유지하며 브라이튼전 출전 여부는 막판 컨디션 점검 후 결정할 방침이에요.",
+  },
+  {
+    id: "mlb-cubs-brown-neck",
+    photoQuery: "Ben Brown",
+    teamEn: "Chicago Cubs",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "시카고 컵스",
+    player: "벤 브라운",
+    status: "doubtful",
+    updated: "2026-08-24",
+    headline: "브라운, 목 스트레스 반응 재활 순항… 라이브 배팅 훈련 이어가며 9월 복귀 목표",
+    summary:
+      "지난 6월 목(경추 5번) 스트레스 반응으로 부상자 명단에 올랐던 컵스 투수 벤 브라운이 8월 21일 애리조나에서 라이브 배팅 훈련을 소화했고, 이번 주에도 한 차례 더 타자를 상대할 예정이에요. 결과가 순조로우면 마이너리그 재활 등판으로 넘어갈 계획이며, 구단은 9월 중 1군 복귀를 목표로 하고 있어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
