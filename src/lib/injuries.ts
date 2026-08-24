@@ -1482,6 +1482,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "로키스 3루수 카일 카로스가 지난 21일 뇌진탕 명단에서 복귀했지만, 다음 날 가디언스전 도중 증상이 다시 나타나며 하루 만에 라인업에서 빠졌어요. 결국 23일 이달 들어 두 번째로 7일 뇌진탕 부상자 명단에 올랐는데, 이는 이달 초 애리조나전에서 토바르와 충돌하며 다친 부위가 좀처럼 낫지 않고 있는 것으로 보여요.",
   },
+  {
+    id: "mlb-rockies-goodman-shoulder",
+    photoQuery: "Hunter Goodman",
+    teamEn: "Colorado Rockies",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "콜로라도 로키스",
+    player: "헌터 굿맨",
+    status: "out",
+    updated: "2026-08-24",
+    headline: "굿맨, 왼쪽 어깨 근육 긴장으로 10일 부상자 명단",
+    summary:
+      "로키스 포수 헌터 굿맨이 지난 8월 12일 애리조나전에서 스윙 도중 왼쪽 어깨에 통증을 느꼈고, 8월 15일자로 소급 적용된 10일 부상자 명단에 올랐어요. 두 차례 올스타에 선정되고 홈런 34개로 리그 상위권을 달리던 굿맨의 이탈에, 워런 셰퍼 감독은 최소 이탈 기간이 끝나는 대로 복귀시킬 계획이라고 밝혔어요. 빈자리는 브랙스턴 풀포드가 콜업돼 채웠어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
