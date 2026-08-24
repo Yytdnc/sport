@@ -1370,6 +1370,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "루이스 아라에스가 8월 22일 카디널스전 4회 다리 쪽 근육 경련으로 조기 교체됐고, 같은 경기에서 데릭 힐도 목이 뻣뻣해지는 증상으로 대타 교체됐어요. 두 선수 모두 다음 날 일요일 경기에는 결장했지만 구단은 장기 이탈로 이어질 우려는 없다고 밝혔어요.",
   },
+  {
+    id: "laliga-realmadrid-pitarch-knee",
+    photoQuery: "Thiago Pitarch",
+    teamEn: "Real Madrid",
+    league: "laliga",
+    leagueLabel: "라리가",
+    team: "레알 마드리드",
+    player: "티아고 피타르치",
+    status: "out",
+    updated: "2026-08-24",
+    headline: "레알 마드리드 유망주 피타르치, 복귀 첫 훈련서 무릎 인대 부상… 6~8주 결장",
+    summary:
+      "국가대표팀 일정을 마치고 일찍 복귀한 18세 미드필더 티아고 피타르치가 레알 마드리드 팀 합류 후 가진 첫 훈련에서 왼쪽 무릎을 다쳤어요. 정밀 검진 결과 내측 측부인대 부분 손상으로 확인돼 6~8주가량 결장이 예상되며, 프리시즌 전 기간은 물론 라리가 개막 초반 경기들에도 나서지 못할 전망이에요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
