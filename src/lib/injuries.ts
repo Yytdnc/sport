@@ -1384,6 +1384,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "국가대표팀 일정을 마치고 일찍 복귀한 18세 미드필더 티아고 피타르치가 레알 마드리드 팀 합류 후 가진 첫 훈련에서 왼쪽 무릎을 다쳤어요. 정밀 검진 결과 내측 측부인대 부분 손상으로 확인돼 6~8주가량 결장이 예상되며, 프리시즌 전 기간은 물론 라리가 개막 초반 경기들에도 나서지 못할 전망이에요.",
   },
+  {
+    id: "laliga-barcelona-bardghji-acl",
+    photoQuery: "Roony Bardghji",
+    teamEn: "Barcelona",
+    league: "laliga",
+    leagueLabel: "라리가",
+    team: "바르셀로나",
+    player: "루니 바르드기",
+    status: "out",
+    updated: "2026-08-24",
+    headline: "바르드기, 훈련 중 오른쪽 무릎 전방십자인대 파열… 6~7개월 결장 전망",
+    summary:
+      "바르셀로나 윙어 루니 바르드기가 팀 훈련 도중 오른쪽 무릎을 다쳐 눈물을 흘리며 그라운드를 떠났고, 정밀 검진에서 전방십자인대 파열이 확인돼 수술을 받았어요. 2024년 코펜하겐 시절에도 같은 무릎 십자인대를 다쳤던 그에게는 두 번째 파열로, 복귀까지 6~7개월이 걸릴 전망이라 이번 여름 이적 논의도 사실상 무산됐어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
