@@ -1483,6 +1483,20 @@ export const INJURIES: InjuryItem[] = [
       "로키스 3루수 카일 카로스가 지난 21일 뇌진탕 명단에서 복귀했지만, 다음 날 가디언스전 도중 증상이 다시 나타나며 하루 만에 라인업에서 빠졌어요. 결국 23일 이달 들어 두 번째로 7일 뇌진탕 부상자 명단에 올랐는데, 이는 이달 초 애리조나전에서 토바르와 충돌하며 다친 부위가 좀처럼 낫지 않고 있는 것으로 보여요.",
   },
   {
+    id: "mlb-redsox-mead-wrist",
+    photoQuery: "Curtis Mead",
+    teamEn: "Boston Red Sox",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "보스턴 레드삭스",
+    player: "커티스 미드",
+    status: "doubtful",
+    updated: "2026-08-24",
+    headline: "미드, 손목 골절 4주째 정밀 검사… 복귀 단계 가늠",
+    summary:
+      "보스턴으로 트레이드된 커티스 미드가 지난달 27일 데뷔전에서 시속 95마일 강속구에 왼쪽 손목을 맞아 비전위 골절 판정을 받았어요. 수술 없이 6~8주 회복을 목표로 재활 중인 그는 부상 후 약 4주가 지난 8월 24일 추가 정밀 검사를 받을 예정이며, 결과에 따라 다음 복귀 단계가 정해질 전망이에요.",
+  },
+  {
     id: "mlb-rockies-goodman-shoulder",
     photoQuery: "Hunter Goodman",
     teamEn: "Colorado Rockies",
