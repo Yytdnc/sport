@@ -1300,6 +1300,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "카디널스 선발 헌터 도빈스가 지난 금요일 필라델피아전에서 4이닝 3실점을 기록한 뒤 5회 단 한 개의 공만 던지고 오른쪽 전완근 뻣뻣함을 호소하며 조기 강판됐어요. 구단은 8월 22일 그를 15일 부상자 명단에 올렸고, 정확한 손상 정도는 추가 검진을 거쳐야 확인될 전망이에요.",
   },
+  {
+    id: "mlb-padres-mize-ankle",
+    photoQuery: "Casey Mize",
+    teamEn: "San Diego Padres",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "샌디에이고 파드리스",
+    player: "케이시 마이즈",
+    status: "questionable",
+    updated: "2026-08-24",
+    headline: "마이즈, 더그아웃 계단서 미끄러져 오른쪽 발목 부상… 정밀 검사는 이상 없어",
+    summary:
+      "트레이드 데드라인에 파드리스로 이적한 케이시 마이즈가 8월 22일 트윈스전 도중 더그아웃 계단에서 미끄러지며 오른쪽 발목을 다쳐 3회에 조기 강판됐어요. 다행히 영상 검사에서는 특별한 손상이 발견되지 않아 구단은 그를 데이 투 데이로 분류했어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
