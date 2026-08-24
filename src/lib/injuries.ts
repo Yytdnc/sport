@@ -1286,6 +1286,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "발렌시아 디에고 로페스가 지난 시즌 마지막 라운드 바르셀로나전에서 오른쪽 무릎 통증으로 후반 초반 교체된 뒤 정밀 검사에서 전방십자인대 파열 진단을 받고 수술을 마쳤어요. 구단은 복귀 시점을 2027년 초로 예상하고 있어, 2026-27시즌 상당 기간을 결장할 전망이에요.",
   },
+  {
+    id: "mlb-cardinals-dobbins-forearm",
+    photoQuery: "Hunter Dobbins",
+    teamEn: "St. Louis Cardinals",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "세인트루이스 카디널스",
+    player: "헌터 도빈스",
+    status: "out",
+    updated: "2026-08-24",
+    headline: "도빈스, 오른쪽 전완근 뻣뻣함으로 15일 부상자 명단",
+    summary:
+      "카디널스 선발 헌터 도빈스가 지난 금요일 필라델피아전에서 4이닝 3실점을 기록한 뒤 5회 단 한 개의 공만 던지고 오른쪽 전완근 뻣뻣함을 호소하며 조기 강판됐어요. 구단은 8월 22일 그를 15일 부상자 명단에 올렸고, 정확한 손상 정도는 추가 검진을 거쳐야 확인될 전망이에요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
