@@ -1188,6 +1188,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "밀워키 브랜던 우드러프가 이달 초 받은 정밀 검사에서 오른쪽 어깨가 충분히 회복된 것으로 나타나면서 우려했던 수술을 받지 않기로 했어요. 8월 26일부터 5주에 걸친 단계적 투구 프로그램에 들어갈 예정이며, 팻 머피 감독은 시즌 내 복귀 가능성을 낮게 보면서도 완전히 배제하지는 않는다고 밝혔어요.",
   },
+  {
+    id: "mlb-tigers-greene-hamstring",
+    photoQuery: "Riley Greene",
+    teamEn: "Detroit Tigers",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "디트로이트 타이거스",
+    player: "라일리 그린",
+    status: "doubtful",
+    updated: "2026-08-24",
+    headline: "그린, 라켈랜드서 재활 순항… 복귀 전 재활경기 필요할 듯",
+    summary:
+      "오른쪽 햄스트링 긴장으로 이탈했던 라일리 그린이 팀 재활 시설이 있는 라켈랜드에서 러닝과 타격, 수비까지 소화하는 정상적인 야구 활동 단계에 접어들었어요. 지난 8월 22일부터 부상자 명단 복귀 자격을 얻었지만, AJ 힌치 감독은 실전 감각을 되찾기 위해 마이너리그 재활 경기를 한두 차례 더 치를 가능성이 크다고 밝혔어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
