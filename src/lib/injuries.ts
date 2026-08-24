@@ -1426,6 +1426,48 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "허리 경련으로 5월 초부터 이탈했던 다저스 선발 타일러 글래스노우가 트리플A 오클라호마시티에서의 재활 등판을 성공적으로 마쳤어요. 데이브 로버츠 감독은 그가 8월 25일 화요일 애틀랜타 브레이브스전 선발로 팀에 복귀한다고 발표했어요.",
   },
+  {
+    id: "mlb-mets-soto-calf",
+    photoQuery: "Juan Soto",
+    teamEn: "New York Mets",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "뉴욕 메츠",
+    player: "후안 소토",
+    status: "out",
+    updated: "2026-08-24",
+    headline: "소토, 왼쪽 종아리 2등급 부상으로 이탈 지속… 복귀 시점은 아직 불투명",
+    summary:
+      "다저스전 도중 왼쪽 종아리 통증이 재발해 부상자 명단에 오른 후안 소토가 여전히 명확한 복귀 시점을 잡지 못하고 있어요. 앞서 4월에도 오른쪽 종아리 부상으로 결장했던 그는 이번이 시즌 두 번째 종아리 관련 이탈이에요. 본인은 '정규시즌 안에 반드시 돌아오겠다'며 자신감을 나타냈어요.",
+  },
+  {
+    id: "mlb-cubs-swanson-oblique",
+    photoQuery: "Dansby Swanson",
+    teamEn: "Chicago Cubs",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "시카고 컵스",
+    player: "댄스비 스완슨",
+    status: "out",
+    updated: "2026-08-24",
+    headline: "스완슨, 옆구리(복사근) 2등급 부상으로 IL… 정규시즌 복귀 빠듯",
+    summary:
+      "컵스 주전 유격수 댄스비 스완슨이 카디널스전 3회 헛스윙 후 왼쪽 옆구리 통증을 호소하며 조기 교체됐고, 정밀 검진에서 복사근 2등급 손상이 확인돼 부상자 명단에 올랐어요. 회복까지 4~6주가 예상돼 정규시즌 내 복귀는 빠듯하며, 포스트시즌 전 합류가 목표로 거론되고 있어요. 공백 기간에는 니코 호너와 페드로 라미레스가 키스톤 콤비를 맡을 전망이에요.",
+  },
+  {
+    id: "mlb-dodgers-wrobleski-forearm",
+    photoQuery: "Justin Wrobleski",
+    teamEn: "Los Angeles Dodgers",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "로스앤젤레스 다저스",
+    player: "저스틴 로블레스키",
+    status: "doubtful",
+    updated: "2026-08-24",
+    headline: "로블레스키, 왼쪽 전완근 염증으로 15일 IL… 이탈 길지 않을 듯",
+    summary:
+      "올스타에도 선정됐던 다저스 좌완 저스틴 로블레스키가 왼쪽 전완근 염증으로 15일 부상자 명단에 올랐어요. 전반기 평균자책점 2점대로 활약했지만 최근 등판에서 다소 흔들렸던 가운데 나온 조치이며, 데이브 로버츠 감독은 심각하게 보지 않는다며 이탈 기간이 길지 않을 것으로 내다봤어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
