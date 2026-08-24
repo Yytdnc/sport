@@ -1202,6 +1202,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "오른쪽 햄스트링 긴장으로 이탈했던 라일리 그린이 팀 재활 시설이 있는 라켈랜드에서 러닝과 타격, 수비까지 소화하는 정상적인 야구 활동 단계에 접어들었어요. 지난 8월 22일부터 부상자 명단 복귀 자격을 얻었지만, AJ 힌치 감독은 실전 감각을 되찾기 위해 마이너리그 재활 경기를 한두 차례 더 치를 가능성이 크다고 밝혔어요.",
   },
+  {
+    id: "laliga-barcelona-gavi-knee",
+    photoQuery: "Gavi",
+    teamEn: "FC Barcelona",
+    league: "laliga",
+    leagueLabel: "라리가",
+    team: "바르셀로나",
+    player: "가비",
+    status: "questionable",
+    updated: "2026-08-24",
+    headline: "가비, 엘체전서 오른쪽 무릎 통증 호소하며 조기 교체… MRI 결과 대기",
+    summary:
+      "바르셀로나 가비가 라리가 개막전인 엘체전 전반 종료 직전 오른쪽 무릎 통증을 호소하며 교체 아웃됐어요. 한스이 플릭 감독은 경기 후 '우려했던 것보다는 나은 상태'라고 전하면서도 정확한 손상 정도를 확인하기 위해 MRI 검사를 받을 예정이라고 밝혔어요. 해당 부위는 2023년 전방십자인대 파열로 두 차례 수술을 받았던 무릎이라, 구단은 검사 결과가 나올 때까지 신중한 태도를 유지하고 있어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
