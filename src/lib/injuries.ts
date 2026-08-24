@@ -1468,6 +1468,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "올스타에도 선정됐던 다저스 좌완 저스틴 로블레스키가 왼쪽 전완근 염증으로 15일 부상자 명단에 올랐어요. 전반기 평균자책점 2점대로 활약했지만 최근 등판에서 다소 흔들렸던 가운데 나온 조치이며, 데이브 로버츠 감독은 심각하게 보지 않는다며 이탈 기간이 길지 않을 것으로 내다봤어요.",
   },
+  {
+    id: "mlb-rockies-karros-concussion",
+    photoQuery: "Kyle Karros",
+    teamEn: "Colorado Rockies",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "콜로라도 로키스",
+    player: "카일 카로스",
+    status: "out",
+    updated: "2026-08-24",
+    headline: "카로스, 뇌진탕 증세 재발로 이달 두 번째 부상자 명단행",
+    summary:
+      "로키스 3루수 카일 카로스가 지난 21일 뇌진탕 명단에서 복귀했지만, 다음 날 가디언스전 도중 증상이 다시 나타나며 하루 만에 라인업에서 빠졌어요. 결국 23일 이달 들어 두 번째로 7일 뇌진탕 부상자 명단에 올랐는데, 이는 이달 초 애리조나전에서 토바르와 충돌하며 다친 부위가 좀처럼 낫지 않고 있는 것으로 보여요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
