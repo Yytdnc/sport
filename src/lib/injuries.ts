@@ -1314,6 +1314,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "트레이드 데드라인에 파드리스로 이적한 케이시 마이즈가 8월 22일 트윈스전 도중 더그아웃 계단에서 미끄러지며 오른쪽 발목을 다쳐 3회에 조기 강판됐어요. 다행히 영상 검사에서는 특별한 손상이 발견되지 않아 구단은 그를 데이 투 데이로 분류했어요.",
   },
+  {
+    id: "mlb-phillies-arraez-hill",
+    photoQuery: "Luis Arraez",
+    teamEn: "Philadelphia Phillies",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "필라델피아 필리스",
+    player: "루이스 아라에스 · 데릭 힐",
+    status: "questionable",
+    updated: "2026-08-24",
+    headline: "필리스 아라에스·힐, 카디널스전 나란히 조기 교체… 일요일 결장",
+    summary:
+      "루이스 아라에스가 8월 22일 카디널스전 4회 다리 쪽 근육 경련으로 조기 교체됐고, 같은 경기에서 데릭 힐도 목이 뻣뻣해지는 증상으로 대타 교체됐어요. 두 선수 모두 다음 날 일요일 경기에는 결장했지만 구단은 장기 이탈로 이어질 우려는 없다고 밝혔어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
