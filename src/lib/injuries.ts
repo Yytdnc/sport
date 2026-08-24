@@ -1398,6 +1398,34 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "바르셀로나 윙어 루니 바르드기가 팀 훈련 도중 오른쪽 무릎을 다쳐 눈물을 흘리며 그라운드를 떠났고, 정밀 검진에서 전방십자인대 파열이 확인돼 수술을 받았어요. 2024년 코펜하겐 시절에도 같은 무릎 십자인대를 다쳤던 그에게는 두 번째 파열로, 복귀까지 6~7개월이 걸릴 전망이라 이번 여름 이적 논의도 사실상 무산됐어요.",
   },
+  {
+    id: "mlb-dodgers-smith-neck-rehab",
+    photoQuery: "Will Smith",
+    teamEn: "Los Angeles Dodgers",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "로스앤젤레스 다저스",
+    player: "윌 스미스",
+    status: "doubtful",
+    updated: "2026-08-24",
+    headline: "스미스, 목 부상 재활 시동… 9월 초 다저스 복귀 목표",
+    summary:
+      "6월 초부터 목(경추) 염증으로 이탈해 있던 다저스 포수 윌 스미스가 8월 25일 화요일 트리플A 오클라호마시티에서 재활 경기를 시작해요. 최근 실전 타격 훈련까지 소화하며 회복세를 보인 그를 두고 데이브 로버츠 감독은 로스터 확장이 시작되는 9월 초 활성화를 기대한다고 밝혔어요.",
+  },
+  {
+    id: "mlb-dodgers-glasnow-return",
+    photoQuery: "Tyler Glasnow",
+    teamEn: "Los Angeles Dodgers",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "로스앤젤레스 다저스",
+    player: "타일러 글래스노우",
+    status: "doubtful",
+    updated: "2026-08-24",
+    headline: "글래스노우, 화요일 애틀랜타전 선발 등판으로 다저스 복귀 예정",
+    summary:
+      "허리 경련으로 5월 초부터 이탈했던 다저스 선발 타일러 글래스노우가 트리플A 오클라호마시티에서의 재활 등판을 성공적으로 마쳤어요. 데이브 로버츠 감독은 그가 8월 25일 화요일 애틀랜타 브레이브스전 선발로 팀에 복귀한다고 발표했어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
