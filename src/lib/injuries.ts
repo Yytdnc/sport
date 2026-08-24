@@ -1258,6 +1258,34 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "지난 6월 목(경추 5번) 스트레스 반응으로 부상자 명단에 올랐던 컵스 투수 벤 브라운이 8월 21일 애리조나에서 라이브 배팅 훈련을 소화했고, 이번 주에도 한 차례 더 타자를 상대할 예정이에요. 결과가 순조로우면 마이너리그 재활 등판으로 넘어갈 계획이며, 구단은 9월 중 1군 복귀를 목표로 하고 있어요.",
   },
+  {
+    id: "laliga-getafe-uche-knee",
+    photoQuery: "Christantus Uche",
+    teamEn: "Getafe CF",
+    league: "laliga",
+    leagueLabel: "라리가",
+    team: "헤타페",
+    player: "크리스탄투스 우체",
+    status: "out",
+    updated: "2026-08-24",
+    headline: "우체, 프리시즌 친선전서 무릎 인대·반월판 파열… 시즌 아웃 확정",
+    summary:
+      "헤타페 크리스탄투스 우체가 AS 모나코와의 프리시즌 친선경기 도중 상대 선수의 거친 태클에 걸려 들것에 실려 나갔어요. 정밀 검사 결과 오른쪽 무릎 인대와 반월판이 동시에 손상된 것으로 확인돼 수술을 앞두고 있으며, 구단은 그가 이번 시즌을 통째로 결장할 것이라고 밝혔어요.",
+  },
+  {
+    id: "laliga-valencia-diegolopez-acl",
+    photoQuery: "Diego Lopez",
+    teamEn: "Valencia CF",
+    league: "laliga",
+    leagueLabel: "라리가",
+    team: "발렌시아",
+    player: "디에고 로페스",
+    status: "out",
+    updated: "2026-08-24",
+    headline: "발렌시아 로페스, 전방십자인대 파열 수술… 2027년 초 복귀 목표",
+    summary:
+      "발렌시아 디에고 로페스가 지난 시즌 마지막 라운드 바르셀로나전에서 오른쪽 무릎 통증으로 후반 초반 교체된 뒤 정밀 검사에서 전방십자인대 파열 진단을 받고 수술을 마쳤어요. 구단은 복귀 시점을 2027년 초로 예상하고 있어, 2026-27시즌 상당 기간을 결장할 전망이에요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
