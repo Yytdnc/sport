@@ -833,10 +833,10 @@ export const INJURIES: InjuryItem[] = [
     team: "밀워키 브루어스",
     player: "살 프렐릭",
     status: "doubtful",
-    updated: "2026-08-22",
-    headline: "프렐릭, 트리플A 재활 순항… 메이저 복귀 임박",
+    updated: "2026-08-25",
+    headline: "프렐릭, 메츠와의 홈 시리즈에서 복귀 목표",
     summary:
-      "어깨 부상으로 이탈했던 살 프렐릭이 트리플A 내슈빌에서 재활 경기를 이어가며 좋은 타격감을 보이고 있어요. 8월 22일 기준 아직 1군에 합류하지 못했지만, 팻 머피 감독은 '조만간 볼 수 있을 것'이라며 복귀가 머지않았음을 시사했어요.",
+      "어깨 부상으로 이탈했던 살 프렐릭이 트리플A 내슈빌에서 재활 경기를 이어가며 좋은 타격감을 보이고 있어요. 브루어스는 8월 25일부터 시작되는 메츠와의 홈 3연전 기간 중 그의 1군 합류를 목표로 하고 있어요.",
   },
   {
     id: "mlb-bluejays-smith-hamstring",
@@ -1593,6 +1593,34 @@ export const INJURIES: InjuryItem[] = [
     headline: "나테라 주니어, 허리 근육 경련으로 15일 부상자 명단",
     summary:
       "에인절스 좌완 불펜 투수 사미 나테라 주니어가 허리 근육 경련으로 8월 17일자로 소급 적용된 15일 부상자 명단에 올랐어요. 정확한 결장 기간은 아직 나오지 않았지만 최소 몇 주간은 마운드에서 보기 어려울 전망이며, 빈자리는 새미 페랄타가 트리플A 솔트레이크시티에서 콜업돼 채웠어요.",
+  },
+  {
+    id: "epl-chelsea-anselmino-henderson-wrist",
+    photoQuery: "Aaron Anselmino",
+    teamEn: "Chelsea",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "첼시",
+    player: "아론 안셀미노 · 조던 헨더슨",
+    status: "out",
+    updated: "2026-08-25",
+    headline: "첼시, 풀럼전 앞두고 안셀미노·헨더슨도 결장 명단에",
+    summary:
+      "첼시 수비수 아론 안셀미노가 햄스트링 부상으로 풀럼과의 프리미어리그 개막전에 나서지 못해요. 조던 헨더슨도 프리시즌 중 입은 손목 부상에서 아직 완전히 회복하지 못해 컨택 훈련 허가를 받지 못한 상태라 이번 경기 결장이 확정됐어요.",
+  },
+  {
+    id: "epl-fulham-cairney-knee",
+    photoQuery: "Tom Cairney",
+    teamEn: "Fulham",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "풀럼",
+    player: "톰 케어니",
+    status: "out",
+    updated: "2026-08-25",
+    headline: "풀럼 주장 케어니, 무릎 시술로 첼시전 결장",
+    summary:
+      "풀럼 주장 톰 케어니가 이달 초 왼쪽 무릎에 경미한 시술을 받으면서 첼시와의 프리미어리그 개막전에 나서지 못하게 됐어요. 구단은 아직 구체적인 복귀 시점을 밝히지 않았어요.",
   },
 ];
 
