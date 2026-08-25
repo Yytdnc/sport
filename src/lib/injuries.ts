@@ -1566,6 +1566,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "스트라스부르의 에이스 공격수 호아킨 파니첼리가 아르헨티나 대표팀 소집 중 훈련 도중 오른쪽 무릎 전방십자인대가 파열돼 리옹에서 수술을 받았어요. 현재 근력 강화 재활을 이어가고 있으며 3주 안에 러닝과 볼 터치 훈련에 들어갈 예정으로, 복귀 시점은 9~11월 사이로 예상돼요.",
   },
+  {
+    id: "mlb-redsox-whitlock-elbow",
+    photoQuery: "Garrett Whitlock",
+    teamEn: "Boston Red Sox",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "보스턴 레드삭스",
+    player: "개럿 휘틀록",
+    status: "doubtful",
+    updated: "2026-08-25",
+    headline: "휘틀록, 불펜 피칭 소화하며 순항… 25일 이후 복귀 가능성",
+    summary:
+      "보스턴 개럿 휘틀록이 오른쪽 팔꿈치 염증으로 8월 13일 15일 부상자 명단에 올랐고, 이후 받은 MRI 재검사에서는 구조적 이상 없이 깨끗한 결과가 나왔어요. 8월 23일에는 부상 후 처음으로 불펜 피칭을 소화하며 순조롭게 재활을 이어가고 있어, 최소 이탈 기간이 끝나는 25일 이후 실전 복귀 가능성이 열려 있어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
