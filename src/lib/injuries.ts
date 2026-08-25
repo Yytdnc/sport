@@ -1538,6 +1538,34 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "로키스 포수 헌터 굿맨이 지난 8월 12일 애리조나전에서 스윙 도중 왼쪽 어깨에 통증을 느꼈고, 8월 15일자로 소급 적용된 10일 부상자 명단에 올랐어요. 두 차례 올스타에 선정되고 홈런 34개로 리그 상위권을 달리던 굿맨의 이탈에, 워런 셰퍼 감독은 최소 이탈 기간이 끝나는 대로 복귀시킬 계획이라고 밝혔어요. 빈자리는 브랙스턴 풀포드가 콜업돼 채웠어요.",
   },
+  {
+    id: "mlb-phillies-garcia-hamstring",
+    photoQuery: "Luis Garcia",
+    teamEn: "Philadelphia Phillies",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "필라델피아 필리스",
+    player: "루이스 가르시아",
+    status: "out",
+    updated: "2026-08-25",
+    headline: "필리스 가르시아, 왼쪽 햄스트링 부상으로 10일 IL… 시즌 아웃 가능성도",
+    summary:
+      "필리스 투수 루이스 가르시아가 왼쪽 햄스트링 긴장으로 8월 21일 10일 부상자 명단에 올랐어요. 회복 속도가 더딜 경우 남은 시즌을 모두 결장할 가능성도 거론되고 있어요.",
+  },
+  {
+    id: "ligue1-strasbourg-panichelli-acl",
+    photoQuery: "Joaquin Panichelli",
+    teamEn: "Strasbourg",
+    league: "ligue1",
+    leagueLabel: "리그앙",
+    team: "스트라스부르",
+    player: "호아킨 파니첼리",
+    status: "out",
+    updated: "2026-08-25",
+    headline: "스트라스부르 파니첼리, 전방십자인대 파열 수술 후 재활 순항",
+    summary:
+      "스트라스부르의 에이스 공격수 호아킨 파니첼리가 아르헨티나 대표팀 소집 중 훈련 도중 오른쪽 무릎 전방십자인대가 파열돼 리옹에서 수술을 받았어요. 현재 근력 강화 재활을 이어가고 있으며 3주 안에 러닝과 볼 터치 훈련에 들어갈 예정으로, 복귀 시점은 9~11월 사이로 예상돼요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
