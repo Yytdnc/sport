@@ -1609,6 +1609,20 @@ export const INJURIES: InjuryItem[] = [
       "첼시 수비수 아론 안셀미노가 햄스트링 부상으로 풀럼과의 프리미어리그 개막전에 나서지 못해요. 조던 헨더슨도 프리시즌 중 입은 손목 부상에서 아직 완전히 회복하지 못해 컨택 훈련 허가를 받지 못한 상태라 이번 경기 결장이 확정됐어요.",
   },
   {
+    id: "bundesliga-bayern-kane-thigh",
+    photoQuery: "Harry Kane",
+    teamEn: "Bayern Munich",
+    league: "bundesliga",
+    leagueLabel: "분데스리가",
+    team: "바이에른 뮌헨",
+    player: "해리 케인",
+    status: "doubtful",
+    updated: "2026-08-25",
+    headline: "케인, 도르트문트와의 슈퍼컵서 허벅지 부상으로 조기 교체",
+    summary:
+      "해리 케인이 도르트문트와의 프란츠 베켄바워 슈퍼컵 경기 33분 만에 오른쪽 허벅지 뒤쪽 통증으로 교체됐어요. 경미한 근육 손상으로 알려졌으며, 본인은 SNS를 통해 '휴식이 필요할 뿐'이라며 크게 걱정할 정도는 아니라는 메시지를 전했어요. 공식 이탈 기간은 아직 발표되지 않았지만 2주 안팎이 될 것이라는 전망이 나와요.",
+  },
+  {
     id: "epl-fulham-cairney-knee",
     photoQuery: "Tom Cairney",
     teamEn: "Fulham",
