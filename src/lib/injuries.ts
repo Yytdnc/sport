@@ -1636,6 +1636,34 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "풀럼 주장 톰 케어니가 이달 초 왼쪽 무릎에 경미한 시술을 받으면서 첼시와의 프리미어리그 개막전에 나서지 못하게 됐어요. 구단은 아직 구체적인 복귀 시점을 밝히지 않았어요.",
   },
+  {
+    id: "mlb-redsox-anthony-wrist-return",
+    photoQuery: "Roman Anthony",
+    teamEn: "Boston Red Sox",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "보스턴 레드삭스",
+    player: "로먼 앤서니",
+    status: "questionable",
+    updated: "2026-08-25",
+    headline: "앤서니, 트리플A로 재활 무대 옮겨… 9월 초 복귀 결정 임박",
+    summary:
+      "오른손 넷째 손가락 인대 부상으로 5월 초부터 이탈했던 로먼 앤서니가 더블A 포틀랜드에서 시작한 재활 경기를 트리플A 우스터로 옮겨 이어가고 있어요. 재활 경기 최대 허용 기간이 20일인 만큼, 구단은 9월 6일 전후로 그의 1군 복귀 여부를 최종 결정할 예정이에요.",
+  },
+  {
+    id: "bundesliga-hamburg-gronbaek-knee",
+    photoQuery: "Albert Gronbaek",
+    teamEn: "Hamburger SV",
+    league: "bundesliga",
+    leagueLabel: "분데스리가",
+    team: "함부르크 SV",
+    player: "알베르트 그뢴베크",
+    status: "ok",
+    updated: "2026-08-25",
+    headline: "함부르크 그뢴베크, 무릎 정밀 검사 결과 큰 문제 없어… 개인 훈련 복귀",
+    summary:
+      "함부르크 SV의 알베르트 그뢴베크가 릴과의 경기 도중 무릎 부위를 깊게 베이는 부상을 당해 구단에 우려를 안겼지만, 정밀 검사 결과 인대나 뼈 등 구조적 손상은 없는 것으로 확인됐어요. 곧바로 개인 훈련에 복귀하며 분데스리가 개막을 앞두고 한숨을 돌렸어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
