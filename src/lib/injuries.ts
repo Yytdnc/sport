@@ -119,11 +119,11 @@ export const INJURIES: InjuryItem[] = [
     leagueLabel: "EPL",
     team: "맨체스터 시티",
     player: "제레미 도쿠",
-    status: "doubtful",
-    updated: "2026-08-21",
-    headline: "도쿠, 커뮤니티 실드서 종아리 부상… 개막전 결장 위기",
+    status: "out",
+    updated: "2026-08-27",
+    headline: "도쿠, 종아리 부상으로 2~3주 결장… 팰리스전도 결장",
     summary:
-      "제레미 도쿠가 커뮤니티 실드 경기 중 종아리를 다쳤어요. 맨시티의 이번 주말 결장 명단에 이름을 올린 유일한 선수예요.",
+      "엔초 마레스카 감독이 제레미 도쿠의 종아리 부상 이탈 기간을 2~3주로 확인했어요. 도쿠는 개막전에 이어 크리스탈 팰리스전에도 결장하며, 9월 초 코번트리시티전 복귀 여부가 주목받고 있어요.",
   },
   {
     id: "epl-manutd-ugarte-deligt",
@@ -986,11 +986,11 @@ export const INJURIES: InjuryItem[] = [
     leagueLabel: "EPL",
     team: "리버풀",
     player: "페데리코 키에사",
-    status: "doubtful",
-    updated: "2026-08-23",
-    headline: "키에사, 이적과 무관한 컨디션 이슈로 훈련 불참… 뉴캐슬전 결장 위기",
+    status: "out",
+    updated: "2026-08-27",
+    headline: "키에사, 등 근육 부상으로 개막전 결장… 복귀 시점 불투명",
     summary:
-      "페데리코 키에사가 이번 주 리버풀 훈련에 나오지 못했어요. 파브리지오 로마노는 이적 문제가 아니라 신체적 이슈 때문이라고 전했고, 이 여파로 8월 23일 뉴캐슬 원정 개막전 출전이 불투명해졌어요.",
+      "리버풀 감독이 페데리코 키에사의 결장 원인이 코모와의 프리시즌 친선전 중 느낀 등 근육 부상 때문이라고 확인했어요. 결국 뉴캐슬 원정 개막전에 나서지 못했고, 아직 명확한 복귀 시점은 나오지 않은 상태예요.",
   },
   {
     id: "laliga-barcelona-rodri-back",
