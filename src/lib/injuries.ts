@@ -1664,6 +1664,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "함부르크 SV의 알베르트 그뢴베크가 릴과의 경기 도중 무릎 부위를 깊게 베이는 부상을 당해 구단에 우려를 안겼지만, 정밀 검사 결과 인대나 뼈 등 구조적 손상은 없는 것으로 확인됐어요. 곧바로 개인 훈련에 복귀하며 분데스리가 개막을 앞두고 한숨을 돌렸어요.",
   },
+  {
+    id: "mlb-yankees-fernando-cruz-elbow",
+    photoQuery: "Fernando Cruz",
+    teamEn: "New York Yankees",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "뉴욕 양키스",
+    player: "페르난도 크루스",
+    status: "out",
+    updated: "2026-08-27",
+    headline: "크루스, 팔꿈치 불편감으로 15일 부상자 명단 등재",
+    summary:
+      "양키스 불펜투수 페르난도 크루스가 오른쪽 팔꿈치 불편감을 호소해 8월 26일 15일 부상자 명단에 올랐어요. 올스타 브레이크 이후로 홈런을 다섯 개나 내주며 흔들리던 크루스는 전날 애스트로스전에서도 동점 투런포를 맞은 바로 다음 날 명단에 등재됐어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
