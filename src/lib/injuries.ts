@@ -1762,6 +1762,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "다저스 우완 로키 사사키가 8월 27일 애틀랜타 원정 등판 도중 오른손 중지에 물집이 생겨 조기 강판됐고, 구단은 곧바로 그를 15일 부상자 명단에 올렸어요. 빈자리는 우완 세스 홀보르센이 콜업돼 채울 예정이에요.",
   },
+  {
+    id: "bundesliga-stuttgart-nartey-hamstring",
+    photoQuery: "Nikolas Nartey",
+    teamEn: "VfB Stuttgart",
+    league: "bundesliga",
+    leagueLabel: "분데스리가",
+    team: "VfB 슈투트가르트",
+    player: "니콜라스 나르테이",
+    status: "out",
+    updated: "2026-08-28",
+    headline: "나르테이, 포칼서 허벅지 뒤쪽 부상… 바이에른전 이어 몇 주 결장",
+    summary:
+      "슈투트가르트 니콜라스 나르테이가 한자 로스토크와의 DFB-포칼 경기에서 시작 9분 만에 허벅지 뒤쪽을 다쳐 교체됐어요. 정밀 검진 결과 근육 부상으로 확인되면서 8월 28일 바이에른 뮌헨과의 분데스리가 개막전에 이어 앞으로 몇 주간 결장이 예상돼요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
