@@ -1902,6 +1902,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "윌리엄 오술라가 리버풀과의 프리미어리그 개막전 후반 10분 만에 골키퍼 알리송과 충돌해 발을 다치며 교체됐어요. 마티아스 야이슬레 감독은 정확한 손상 정도를 확인하기 위해 전문의 정밀 검사를 받을 예정이라고 밝혔고, 현지에서는 약 2주간의 결장이 예상된다는 전망이 나와요.",
   },
+  {
+    id: "mlb-cubs-shaw-hand-return",
+    photoQuery: "Matt Shaw",
+    teamEn: "Chicago Cubs",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "시카고 컵스",
+    player: "맷 쇼",
+    status: "ok",
+    updated: "2026-08-28",
+    headline: "쇼, 왼손 염좌 두 달 만에 부상자 명단서 복귀",
+    summary:
+      "6월 28일 이후 왼손 염좌로 이탈했던 컵스 쇼가 8월 28일 부상자 명단에서 활성화됐어요. 트리플A 아이오와에서 치른 재활 경기 세 번에서 10타수 4안타로 타격감을 되찾았고, 본인도 통증 없이 전력으로 스윙할 수 있게 됐다고 밝혔어요. 신시내티전 선발 라인업에는 이름을 올리지 못했지만 곧 좌완 투수를 상대로 정기적인 출전 기회를 받을 전망이에요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
