@@ -1874,6 +1874,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "타일러 오닐이 지난 토요일 다이빙 캐치 도중 오른쪽 어깨를 다친 뒤 세인트루이스에서 받은 MRI 검사에서 회전근개 염좌가 확인됐어요. 구단은 8월 26일 그를 어깨 염증을 이유로 10일 부상자 명단에 올렸고, 본인도 최근 타격 시 통증이 감당하기 어려운 수준이었다고 밝혔어요.",
   },
+  {
+    id: "epl-newcastle-osula-foot",
+    photoQuery: "William Osula",
+    teamEn: "Newcastle United",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "뉴캐슬 유나이티드",
+    player: "윌리엄 오술라",
+    status: "questionable",
+    updated: "2026-08-28",
+    headline: "오술라, 개막전서 알리송과 충돌해 발 부상… 2주가량 결장 전망",
+    summary:
+      "윌리엄 오술라가 리버풀과의 프리미어리그 개막전 후반 10분 만에 골키퍼 알리송과 충돌해 발을 다치며 교체됐어요. 마티아스 야이슬레 감독은 정확한 손상 정도를 확인하기 위해 전문의 정밀 검사를 받을 예정이라고 밝혔고, 현지에서는 약 2주간의 결장이 예상된다는 전망이 나와요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
