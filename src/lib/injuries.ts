@@ -1804,6 +1804,34 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "슈투트가르트 니콜라스 나르테이가 한자 로스토크와의 DFB-포칼 경기에서 시작 9분 만에 허벅지 뒤쪽을 다쳐 교체됐어요. 정밀 검진 결과 근육 부상으로 확인되면서 8월 28일 바이에른 뮌헨과의 분데스리가 개막전에 이어 앞으로 몇 주간 결장이 예상돼요.",
   },
+  {
+    id: "mlb-bluejays-bieber-shoulder",
+    photoQuery: "Shane Bieber",
+    teamEn: "Toronto Blue Jays",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "토론토 블루제이스",
+    player: "셰인 비버",
+    status: "out",
+    updated: "2026-08-28",
+    headline: "비버, 어깨 염증으로 15일 부상자 명단… 시즌 복귀 불투명",
+    summary:
+      "토론토가 셰인 비버를 오른쪽 대원근(테레스 메이저) 염증을 이유로 8월 21일자로 소급 적용된 15일 부상자 명단에 올렸어요. 직전 등판까지 별다른 이상 없이 좋은 투구를 보였던 터라 예상 밖의 소식이었고, 구단은 그에게 최소 2주간 투구를 금지시켰어요. 팀은 남은 시즌 복귀 가능성이 낮은 것으로 보고 있어요.",
+  },
+  {
+    id: "mlb-cardinals-winn-thumb",
+    photoQuery: "Masyn Winn",
+    teamEn: "St. Louis Cardinals",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "세인트루이스 카디널스",
+    player: "메이슨 윈",
+    status: "out",
+    updated: "2026-08-28",
+    headline: "윈, 왼손 엄지 골절로 부상자 명단… 고먼 콜업",
+    summary:
+      "카디널스 유격수 메이슨 윈이 신시내티 원정에서 슬라이딩 도중 왼손 엄지를 다쳤고, 정밀 검사에서 골절이 확인돼 8월 22일자로 소급 적용된 10일 부상자 명단에 올랐어요. 스윙할 때 통증이 심하다고 직접 밝혔던 만큼, 구단은 최소 이탈 기간을 채운 뒤 이번 홈스탠드 중 복귀를 목표로 하고 있어요. 빈자리는 놀런 고먼이 콜업돼 채웠어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
