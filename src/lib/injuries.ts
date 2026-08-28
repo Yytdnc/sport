@@ -1805,6 +1805,20 @@ export const INJURIES: InjuryItem[] = [
       "슈투트가르트 니콜라스 나르테이가 한자 로스토크와의 DFB-포칼 경기에서 시작 9분 만에 허벅지 뒤쪽을 다쳐 교체됐어요. 정밀 검진 결과 근육 부상으로 확인되면서 8월 28일 바이에른 뮌헨과의 분데스리가 개막전에 이어 앞으로 몇 주간 결장이 예상돼요.",
   },
   {
+    id: "bundesliga-leverkusen-culbreath-foot",
+    photoQuery: "Montrell Culbreath",
+    teamEn: "Bayer Leverkusen",
+    league: "bundesliga",
+    leagueLabel: "분데스리가",
+    team: "바이어 레버쿠젠",
+    player: "몬트렐 컬브리스",
+    status: "out",
+    updated: "2026-08-28",
+    headline: "컬브리스, 프리시즌 발 부상으로 개막전 결장",
+    summary:
+      "레버쿠젠의 18세 유망주 몬트렐 컬브리스가 세비야와의 프리시즌 친선전에서 발을 다친 여파로 엘버스베르크와의 분데스리가 개막전에 나서지 못했어요. 구단은 정확한 진단을 위해 추가 검진을 진행 중이며, 시즌 초반 결장이 이어질 전망이에요.",
+  },
+  {
     id: "mlb-bluejays-bieber-shoulder",
     photoQuery: "Shane Bieber",
     teamEn: "Toronto Blue Jays",
