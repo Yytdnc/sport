@@ -1930,6 +1930,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "풀럼의 어린 수비수 뤼크 드 푸제롤이 AFC 윔블던과의 카라바오컵 1군 데뷔전에서 68분 만에 부상으로 교체됐어요. 알바로 아르벨로아 감독은 '아직 확실하지 않지만 심각하지 않기를 바란다'며 앞으로 며칠 안에 그의 활용 계획을 다시 판단하겠다고 밝혔어요.",
   },
+  {
+    id: "ligue1-lyon-mangala-thigh",
+    photoQuery: "Orel Mangala",
+    teamEn: "Olympique Lyonnais",
+    league: "ligue1",
+    leagueLabel: "리그앙",
+    team: "올랭피크 리옹",
+    player: "오렐 망갈라",
+    status: "out",
+    updated: "2026-08-28",
+    headline: "리옹 망갈라, 오세르전 도중 허벅지 부상… 약 2주 결장",
+    summary:
+      "오렐 망갈라가 오세르와의 리그앙 경기 34분 만에 왼쪽 허벅지를 다쳐 교체됐고, 정밀 검진 결과 경미한 근육 손상으로 확인됐어요. 십자인대 파열로 308일간 결장했다가 최근에야 복귀한 터라, 이번에는 약 2주 만에 그라운드로 돌아올 것으로 기대돼요. 다음 렌전 출전은 어려울 전망이에요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
