@@ -1832,6 +1832,48 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "카디널스 유격수 메이슨 윈이 신시내티 원정에서 슬라이딩 도중 왼손 엄지를 다쳤고, 정밀 검사에서 골절이 확인돼 8월 22일자로 소급 적용된 10일 부상자 명단에 올랐어요. 스윙할 때 통증이 심하다고 직접 밝혔던 만큼, 구단은 최소 이탈 기간을 채운 뒤 이번 홈스탠드 중 복귀를 목표로 하고 있어요. 빈자리는 놀런 고먼이 콜업돼 채웠어요.",
   },
+  {
+    id: "epl-manutd-amad-ankle",
+    photoQuery: "Amad Diallo",
+    teamEn: "Manchester United",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "맨체스터 유나이티드",
+    player: "아마드 디알로",
+    status: "out",
+    updated: "2026-08-28",
+    headline: "디알로, 훈련 중 발목 부상… 최대 6주 결장 전망",
+    summary:
+      "아마드 디알로가 카링턴 훈련장에서 발목을 다쳐 헐 시티와의 프리미어리그 개막전에 나서지 못했어요. 초기 정밀 검사 결과가 좋지 않아 최대 6주가량 결장할 수 있다는 전망이 나오면서, 이미 부상으로 이탈한 메이슨 마운트에 이어 맨유의 공격 자원 운용에 부담이 커졌어요.",
+  },
+  {
+    id: "epl-brighton-hinshelwood-rutter",
+    photoQuery: "Jack Hinshelwood",
+    teamEn: "Brighton",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "브라이튼",
+    player: "잭 힌셸우드 · 루터",
+    status: "questionable",
+    updated: "2026-08-28",
+    headline: "브라이튼, 힌셸우드·루터 컨퍼런스리그 결장… 주말 첼시전은 미정",
+    summary:
+      "파비안 휘르첼러 감독이 잭 힌셸우드가 훈련 중 가벼운 문제를 겪어 트롬쇠와의 컨퍼런스리그전에 결장했다고 밝혔어요. 감독은 심각한 부상은 아니라면서도 주말 첼시전 출전은 시간상 빠듯할 수 있다고 언급했고, 함께 결장한 조르지뉴 루터는 복귀 가능성을 좀 더 높게 봤어요.",
+  },
+  {
+    id: "mlb-orioles-oneill-shoulder",
+    photoQuery: "Tyler O'Neill",
+    teamEn: "Baltimore Orioles",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "볼티모어 오리올스",
+    player: "타일러 오닐",
+    status: "out",
+    updated: "2026-08-28",
+    headline: "오닐, 오른쪽 어깨 회전근개 염좌로 10일 부상자 명단",
+    summary:
+      "타일러 오닐이 지난 토요일 다이빙 캐치 도중 오른쪽 어깨를 다친 뒤 세인트루이스에서 받은 MRI 검사에서 회전근개 염좌가 확인됐어요. 구단은 8월 26일 그를 어깨 염증을 이유로 10일 부상자 명단에 올렸고, 본인도 최근 타격 시 통증이 감당하기 어려운 수준이었다고 밝혔어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
