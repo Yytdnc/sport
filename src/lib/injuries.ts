@@ -1763,6 +1763,20 @@ export const INJURIES: InjuryItem[] = [
       "다저스 우완 로키 사사키가 8월 27일 애틀랜타 원정 등판 도중 오른손 중지에 물집이 생겨 조기 강판됐고, 구단은 곧바로 그를 15일 부상자 명단에 올렸어요. 빈자리는 우완 세스 홀보르센이 콜업돼 채울 예정이에요.",
   },
   {
+    id: "mlb-tigers-meadows-arm",
+    photoQuery: "Parker Meadows",
+    teamEn: "Detroit Tigers",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "디트로이트 타이거스",
+    player: "파커 메도우스",
+    status: "out",
+    updated: "2026-08-28",
+    headline: "메도우스, 왼팔 골절 재활 더뎌… 정규시즌 복귀 시간 빠듯",
+    summary:
+      "지난 4월 9일 라일리 그린과 외야에서 충돌해 뇌진탕과 왼쪽 요골 골절을 당했던 파커 메도우스가 수술 후 넉 달 넘게 재활을 이어가고 있어요. 8월 21일 기준으로도 여전히 가동 범위 회복 단계에 머물러 있어 전력 스윙은 아직 소화하지 못하는 상태예요. 타이거스는 복귀 가능성을 완전히 배제하지는 않았지만, 9월이 다가오면서 시즌 내 실전 복귀를 위한 시간은 점점 촉박해지고 있어요.",
+  },
+  {
     id: "bundesliga-stuttgart-nartey-hamstring",
     photoQuery: "Nikolas Nartey",
     teamEn: "VfB Stuttgart",
