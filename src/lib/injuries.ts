@@ -1720,6 +1720,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "이스마일라 사르가 서혜부 부상으로 개막전 에버턴전에 이어 맨체스터 시티전에도 결장해요. 피에르 사주 감독은 한때 복귀가 가까워 보였던 사르가 여전히 개인 훈련만 소화할 만큼 통증이 남아 있다고 밝혀, 복귀 시점은 아직 불투명해요. 그의 공백은 에디 은케티아가 메우게 됐어요.",
   },
+  {
+    id: "mlb-twins-buxton-hip",
+    photoQuery: "Byron Buxton",
+    teamEn: "Minnesota Twins",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "미네소타 트윈스",
+    player: "바이런 벅스턴",
+    status: "questionable",
+    updated: "2026-08-28",
+    headline: "벅스턴, 오른쪽 고관절 통증 재발… 시즌 세 번째 IL행 검토",
+    summary:
+      "바이런 벅스턴이 8월 26일 애슬레틱스전 수비 도중 오른쪽 고관절에 통증을 다시 느껴 조기 교체됐어요. 이미 올 시즌 두 차례나 같은 부위로 부상자 명단에 올랐던 터라, 트윈스는 그를 평가한 뒤 세 번째 IL행 여부를 결정할 예정이에요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
