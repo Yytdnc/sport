@@ -1706,6 +1706,20 @@ export const INJURIES: InjuryItem[] = [
     summary:
       "양키스 불펜투수 페르난도 크루스가 오른쪽 팔꿈치 불편감을 호소해 8월 26일 15일 부상자 명단에 올랐어요. 올스타 브레이크 이후로 홈런을 다섯 개나 내주며 흔들리던 크루스는 전날 애스트로스전에서도 동점 투런포를 맞은 바로 다음 날 명단에 등재됐어요.",
   },
+  {
+    id: "epl-crystalpalace-sarr-groin",
+    photoQuery: "Ismaila Sarr",
+    teamEn: "Crystal Palace",
+    league: "epl",
+    leagueLabel: "EPL",
+    team: "크리스탈 팰리스",
+    player: "이스마일라 사르",
+    status: "out",
+    updated: "2026-08-28",
+    headline: "사르, 서혜부 통증 지속… 맨시티전도 결장",
+    summary:
+      "이스마일라 사르가 서혜부 부상으로 개막전 에버턴전에 이어 맨체스터 시티전에도 결장해요. 피에르 사주 감독은 한때 복귀가 가까워 보였던 사르가 여전히 개인 훈련만 소화할 만큼 통증이 남아 있다고 밝혀, 복귀 시점은 아직 불투명해요. 그의 공백은 에디 은케티아가 메우게 됐어요.",
+  },
 ];
 
 export const INJURY_LEAGUES = [
