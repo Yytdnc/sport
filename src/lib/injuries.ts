@@ -607,12 +607,12 @@ export const INJURIES: InjuryItem[] = [
     league: "bundesliga",
     leagueLabel: "분데스리가",
     team: "바이에른 뮌헨",
-    player: "알폰소 다비스",
-    status: "ok",
-    updated: "2026-08-23",
-    headline: "바이에른 다비스, 근육 부상 재활 마치고 슈퍼컵 출전 가능 상태 회복",
+    player: "레나르트 칼 · 세르지 그나브리",
+    status: "questionable",
+    updated: "2026-08-28",
+    headline: "바이에른, 칼은 슈투트가르트전 복귀 전망… 그나브리는 팀 훈련 합류에도 결장 지속",
     summary:
-      "알폰소 다비스가 근육 부상 재활을 마치고 도르트문트와의 프란츠 베켄바워 슈퍼컵을 앞두고 출전 가능한 몸 상태를 갖췄어요. 세르지 그나브리와 레나르트 칼은 아직 개인 훈련 단계에 머물러 있어 이번 경기 출전이 불투명해요.",
+      "레나르트 칼이 개인 훈련 단계를 마치고 팀 훈련에 복귀하며 8월 28일 슈투트가르트와의 분데스리가 개막전 명단 포함이 유력해졌어요. 오른쪽 허벅지 내전근 부상으로 월드컵까지 결장했던 세르지 그나브리도 이번 주 팀 훈련에 합류했지만, 개막전 출전까지는 시간이 더 필요해 보여요.",
   },
   {
     id: "bundesliga-bayern-musiala-neurological",
@@ -1747,6 +1747,20 @@ export const INJURIES: InjuryItem[] = [
     headline: "애시크래프트, 트리플A 재활 등판 돌입… 팔꿈치 부상서 복귀 청신호",
     summary:
       "오른쪽 팔꿈치 인대(UCL) 부상으로 5월 말 60일 부상자 명단에 올랐던 애시크래프트가 수술 대신 혈소판 풍부 혈장(PRP) 치료를 택해 재활을 이어왔어요. 최근 사이드세션과 불펜 피칭을 무리 없이 소화한 끝에 트리플A 루이빌로 이동해 실전 타자를 상대하는 재활 등판에 나설 예정이에요.",
+  },
+  {
+    id: "mlb-dodgers-sasaki-blister",
+    photoQuery: "Roki Sasaki",
+    teamEn: "Los Angeles Dodgers",
+    league: "mlb",
+    leagueLabel: "MLB",
+    team: "로스앤젤레스 다저스",
+    player: "로키 사사키",
+    status: "out",
+    updated: "2026-08-28",
+    headline: "사사키, 오른손 중지 물집으로 15일 부상자 명단… 홀보르센 콜업",
+    summary:
+      "다저스 우완 로키 사사키가 8월 27일 애틀랜타 원정 등판 도중 오른손 중지에 물집이 생겨 조기 강판됐고, 구단은 곧바로 그를 15일 부상자 명단에 올렸어요. 빈자리는 우완 세스 홀보르센이 콜업돼 채울 예정이에요.",
   },
 ];
 
