@@ -28,6 +28,20 @@ export const INJURY_STATUS_LABEL: Record<InjuryStatus, string> = {
 
 export const INJURIES: InjuryItem[] = [
   {
+    id: "bundesliga-leverkusen-arthur-ankle",
+    photoQuery: "Arthur Bayer Leverkusen",
+    teamEn: "Bayer Leverkusen",
+    league: "bundesliga",
+    leagueLabel: "분데스리가",
+    team: "바이어 레버쿠젠",
+    player: "아르투르",
+    status: "out",
+    updated: "2026-08-29",
+    headline: "레버쿠젠 아르투르, 마인츠전서 발목 인대 파열… 들것에 실려 나가",
+    summary:
+      "레버쿠젠의 아르투르가 마인츠와의 분데스리가 1-1 무승부 경기 도중 공과 무관한 상황에서 발목을 다쳐 들것에 실려 나갔어요. 병원 정밀 검사 결과 발목 신티스모시스 인대 파열로 확인됐고, 구단은 수술 여부를 조만간 결정할 예정이며 최소 몇 주간 결장이 불가피해요.",
+  },
+  {
     id: "mlb-judge-rib",
     photoQuery: "Aaron Judge",
     teamEn: "New York Yankees",
